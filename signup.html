@@ -5,53 +5,68 @@
     <title>
         BAS Sign Up Page
     </title>
-<style>
-    .bold{
-        font-weight: bold;
-    }
-    
-</style>
-    
+    <style>
+        .bold {
+            font-weight: bold;
+        }
+
+        .white {
+            background: white;
+        }
+
+        label {
+            background: white;
+        }
+
+        .boxOutline{
+            border: 1px solid gray;
+            background: white;
+        }
+    </style>
+
 </head>
 
 <body>
     <header>
-        
+
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
             integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-            
+
     </header>
     <link href="signin.css" rel="stylesheet">
-    
+
     <main class="form-signin">
-        <article>
+        <article class="boxOutline">
             <form >
                 <h2 class="display-4">
                     Sign Up Page:
                 </h2>
-                <label for="fname" class="col-form-label bold" >
+                <label for="fname" class="col-form-label bold">
                     <span>First name:</span>
                     <strong><abbr title="required">*</abbr></strong>
                 </label>
-                <input type="text" id="fname" name="fname" required class="form-control" placeholder="First Name" required>
+                <input type="text" id="fname" name="fname" required class="form-control" placeholder="First Name"
+                    required>
 
                 <label for="lname" class="col-form-label  bold">
                     Last name:
                     <strong><abbr title="required">*</abbr></strong>
                 </label>
-                <input type="text" id="lname" name="lname" required class="form-control" placeholder="Last Name" required>
+                <input type="text" id="lname" name="lname" required class="form-control" placeholder="Last Name"
+                    required>
 
                 <label for="luser" class="col-form-label bold">
                     Username:
                     <strong><abbr title="required">*</abbr></strong>
                 </label>
-                <input type="text" id="txtuser" name="txtuser" required class="form-control" placeholder="username123" required>
+                <input type="text" id="txtuser" name="txtuser" required class="form-control" placeholder="username123"
+                    required>
                 <fieldset>
-                    
-                    <div class="bold" >Gender:</div></p>
+
+                    <label class="bold">Gender:</label>
                     <div class="form-check">
                         <input type="radio" id="rbmale" name="gender" value="male" class="form-check-input">
-                        <label for="male" class="form-check-label">Male</label>    
+                        <label for="male" class="form-check-label">Male</label>
                     </div>
                     <div class="form-check">
                         <input type="radio" id="rbfemale" name="gender" value="female" class="form-check-input">
@@ -63,31 +78,34 @@
                         <input type="radio" id="rbother" name="gender" value="other" class="form-check-input">
                         <label for="other" class="form-check-label">Other</label>
                     </div>
-                    
+
                 </fieldset>
 
                 <label for="llocation" class="col-form-label bold">
                     Location:
                 </label>
-                <input type="text" id="txtlocation" name="txtlocation" required class="form-control" placeholder="Colorado, United States" required>
+                <input type="text" id="txtlocation" name="txtlocation" required class="form-control"
+                    placeholder="Colorado, United States" required>
 
                 <label for="lEmail" class="col-form-label bold">
                     Email:
                     <strong><abbr title="required">*</abbr></strong>
                 </label>
-                <input type="text" id="txtemail" name="txtemail" required class="form-control" placeholder="name@example.com">
+                <input type="text" id="txtemail" name="txtemail" required class="form-control"
+                    placeholder="name@example.com">
 
                 <label for="lpassword" class="col-form-label bold">
                     Password:
                     <strong><abbr title="required">*</abbr></strong>
                 </label>
-                <input type="password" id="passcpassword" name="passcpassword" required class="form-control" placeholder="Password">
+                <input type="password" id="passcpassword" name="passcpassword" required class="form-control"
+                    placeholder="Password">
 
                 <label for="lDob" class="col-form-label">
                     Date of Birth:
                 </label>
                 <input type="date" id="lDob" name="lDob" required class="form-control" placeholder="Date of Birth">
-                
+
                 <label for="lquestion1" class="col-form-label">
                     <b>Security Question 1:</b>
                     <strong><abbr title="required">*</abbr></strong>
@@ -97,7 +115,7 @@
                     <option value="q2">What is your older brother's middle name?</option>
                     <option value="q3">What is your hometown?</option>
                 </select>
-                <input type="text" id="txtq1 name="txtq1" required class="form-control">
+                <input type="text" id="txtq1 name=" txtq1" required class="form-control">
 
                 <label for="lquestion2" class="col-form-label">
                     <b>Security Question 2:</b>
@@ -108,7 +126,7 @@
                     <option value="q2">What is your older brother's middle name?</option>
                     <option value="q3">What is your hometown?</option>
                 </select>
-                <input type="text" id="txtq2 name="txtq2" required class="form-control">
+                <input type="text" id="txtq2 name=" txtq2" required class="form-control">
 
                 <label for="lquestion3" class="col-form-label">
                     <b>Security Question 3:</b>
@@ -119,13 +137,13 @@
                     <option value="q2">What is your older brother's middle name?</option>
                     <option value="q3">What is your hometown?</option>
                 </select>
-                <input type="text" id="txtq3 name="txtq3" required class="form-control">
-                
-                <label for="lbio" class="col-sm-1 col-form-label">
+                <input type="text" id="txtq3 name=" txtq3" required class="form-control">
+
+                <label for="lbio" class=" col-form-label bold">
                     Bio:
                 </label>
                 <input type="text" id="txtbio" name="txtbio" class="form-control" placeholder="I like to eat">
-                
+
 
                 <button type="submit" class="btn btn-primary">Submit</button>
                 <button type="reset" class="btn btn-secondary">Reset</button>
