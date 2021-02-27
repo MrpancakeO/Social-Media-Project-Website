@@ -3,9 +3,7 @@ body {
   height: 100%;
 }
 
-div{
-  border: 1px solid black;
-}
+
 
 body {
   display: flex;
@@ -13,6 +11,7 @@ body {
   padding-top: 40px;
   padding-bottom: 40px;
   background-color: #f5f5f5;
+  background-image: url('https://wallpaperaccess.com/full/275578.jpg')
 }
 
 .form-signin {
