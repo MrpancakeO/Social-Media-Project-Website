@@ -6,10 +6,6 @@
         BAS Sign Up Page
     </title>
     <style>
-        .bold {
-            font-weight: bold;
-        }
-
         .white {
             background: white;
         }
@@ -18,10 +14,12 @@
             background: white;
         }
 
-        .boxOutline{
-            border-radius: 10px;
-            border: 5px solid orange;
-            background: white;
+        select {
+            text-align: center;
+        }
+
+        .sizer {
+            width: fit-content;
         }
     </style>
 
@@ -37,8 +35,8 @@
     <link href="signin.css" rel="stylesheet">
 
     <main class="form-signin">
-        <article class="boxOutline">
-            <form >
+        <article class="boxOutline sizer">
+            <form>
                 <h2 class="display-4">
                     <b>Sign Up Page:</b>
                 </h2>
@@ -102,7 +100,7 @@
                 <input type="password" id="passcpassword" name="passcpassword" required class="form-control"
                     placeholder="Password">
 
-                <label for="lDob" class="col-form-label">
+                <label for="lDob" class="col-form-label bold">
                     Date of Birth:
                 </label>
                 <input type="date" id="lDob" name="lDob" required class="form-control" placeholder="Date of Birth">
@@ -116,7 +114,8 @@
                     <option value="q2">What is your older brother's middle name?</option>
                     <option value="q3">What is your hometown?</option>
                 </select>
-                <input type="text" id="txtq1 name=" txtq1" required class="form-control">
+                <input type="text" id="txtq1 name=" txtq1" required class="form-control"
+                    placeholder="Typer answer here...">
 
                 <label for="lquestion2" class="col-form-label">
                     <b>Security Question 2:</b>
@@ -127,7 +126,8 @@
                     <option value="q2">What is your older brother's middle name?</option>
                     <option value="q3">What is your hometown?</option>
                 </select>
-                <input type="text" id="txtq2 name=" txtq2" required class="form-control">
+                <input type="text" id="txtq2 name=" txtq2" required class="form-control"
+                    placeholder="Typer answer here...">
 
                 <label for="lquestion3" class="col-form-label">
                     <b>Security Question 3:</b>
@@ -138,7 +138,8 @@
                     <option value="q2">What is your older brother's middle name?</option>
                     <option value="q3">What is your hometown?</option>
                 </select>
-                <input type="text" id="txtq3 name=" txtq3" required class="form-control">
+                <input type="text" id="txtq3 name=" txtq3" required class="form-control"
+                    placeholder="Typer answer here...">
 
                 <label for="lbio" class=" col-form-label bold">
                     Bio:

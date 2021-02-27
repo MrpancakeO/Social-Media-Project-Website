@@ -18,7 +18,7 @@
 
 body {
   text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
-  background-image: linear-gradient(white, gray);
+  background-image: url('https://wallpaperaccess.com/full/275578.jpg')
 }
 
 .cover-container {
@@ -50,4 +50,11 @@ body {
 .nav-masthead .active {
   color: rgb(0, 0, 0);
   border-bottom-color: #fff;
+}
+
+.boxOutline{
+  
+  border-radius: 10px;
+  border: 5px solid orange;
+  background: white;
 }
