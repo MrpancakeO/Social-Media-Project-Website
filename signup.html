@@ -8,16 +8,28 @@
 <style>
     div{
         
-        text-align: center;
-    
+        
+        
     }
+    label{
+        background:white;
+    }
+
+    .white{
+        background:white;
+
+    }
+    body{
+        background-image: url('https://wallpaperaccess.com/full/275578.jpg')
+    }
+    
 </style>
     
 </head>
 
-<body >
+<body>
     <header>
-        <h1 style="background-image: url('https://vtfishandwildlife.com/sites/fishandwildlife/files/images/Fish/Fishing%20Opportunities/Sportfish%20of%20Vermont/Large%20Mouth%20Bass/largemouthbass.jpg')">
+        <h1 >
             Sign Up Page:
         </h1>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -28,13 +40,13 @@
     
     <section>
         <article>
-            <form>
+            <form style="text-align: center">
                 <fieldset class="border" >
                     <legend class="w-auto"> Part 1: Basic Information</legend>
                     
                     <div class="form-group row">
-                        <div class="col-sm-1">
-                            <label for="fname" class="col-form-label">
+                        <div class="col-sm-1" >
+                            <label for="fname" class="col-form-label white">
                                 <span>First name:</span>
                                 <strong><abbr title="required">*</abbr></strong>
                             </label>
@@ -47,7 +59,7 @@
 
                     <div class="form-group row">
                         <div class="col-sm-1">
-                            <label for="lname" class="col-form-label">
+                            <label for="lname" class="col-form-label  white">
                                 Last name:
                                 <strong><abbr title="required">*</abbr></strong>
                             </label>
@@ -70,10 +82,10 @@
                     </div>
 
                     <fieldset class="border form-group">
-                        <div class="row">
-                            <legend class="col-sm-1 col-form-label">Gender: </legend>
+                        <div class="row" >
+                            <legend class="col-sm-1 col-form-label white">Gender: </legend>
 
-                            <div class="col-ls-10">
+                            <div class="col-ls-10 white " >
                                 <div class="form-check">
                                     <input type="radio" id="rbmale" name="gender" value="male" class="form-check-input">
                                     <label for="male" class="form-check-label">Male</label>
@@ -99,7 +111,7 @@
 
                     <div class="form-group row">
                         <div class="col-sm-1">
-                            <label for="llocation" class="col-form-label">
+                            <label for="llocation" class="col-form-label white">
                                 Location:
                             </label>
                         </div>
@@ -160,7 +172,7 @@
                     <div>
                         
                         <label for="lquestion1" class="col-sm-2 col-form-label">
-                            Security Question 1:
+                            <b>Security Question 1:</b>
                             <strong><abbr title="required">*</abbr></strong>
                         </label>
                         <div class="col-sm-10">
@@ -177,7 +189,7 @@
                     <div>
                         
                         <label for="lquestion2" class="col-sm-2 col-form-label">
-                            Security Question 2:
+                            <b>Security Question 3:</b>
                             <strong><abbr title="required">*</abbr></strong>
                         </label>
                         <div class="col-sm-10">
@@ -194,7 +206,7 @@
                     <div>
                         
                         <label for="lquestion3" class="col-sm-2 col-form-label">
-                            Security Question 3:
+                            <b>Security Question 3:</b>
                             <strong><abbr title="required">*</abbr></strong>
                         </label>
                         <div class="col-sm-10">
