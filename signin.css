@@ -3,6 +3,10 @@ body {
   height: 100%;
 }
 
+div{
+  border: 1px solid black;
+}
+
 body {
   display: flex;
   align-items: center;
