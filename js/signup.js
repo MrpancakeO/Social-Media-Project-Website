@@ -6,25 +6,25 @@ function func() {
 
             if (this.value == 'What is your mothers maiden name?') {
 
-                $("#answer").show();
+                $("#text").show();
 
             }
 
             else if (this.value == 'What is you oldest brother middle name??') {
 
-                $("#answer").show();
+                $("#text").show();
 
             }
 
             else if (this.value == "What is your hometown?") {
 
-                $("#").show();
+                $("#text").show();
 
             }
 
             else {
 
-                $("#answer").hide();
+                $("#text").hide();
 
             }
 
@@ -32,5 +32,5 @@ function func() {
         });
 
     });
-    
+
 }
