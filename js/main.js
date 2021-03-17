@@ -20,7 +20,8 @@ const app = Vue.createApp({
     data() {
         return {
             keyword: '',
-            result: null
+            result: null,
+            index:0
         }
     },
     methods: {
