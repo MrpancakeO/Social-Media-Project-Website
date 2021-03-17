@@ -1,3 +1,21 @@
+function validateForm(){
+    var txtSearch=document.querySelector("#txtSearch");
+    var txtErrorMessage=document.querySelector("#txtErrorMessage");
+    var formIsValid=true;
+    if(txtSearch.value==""){
+        txtErrorMessage.classList.remove("invisible");
+        txtErrorMessage.innerHTML = "Keyword must be inputted";
+        txtSearch.classList.add("hasError");
+        formIsValid=false;
+    }
+    else{
+        txtErrorMessage.classList.add("invisible");
+        txtErrorMessage.innerHTML = "";
+        txtSearch.classList.remove("hasError");
+    }
+    return formIsValid;
+}
+
 const app = Vue.createApp({
     data() {
         return {

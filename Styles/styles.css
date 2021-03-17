@@ -1,8 +1,11 @@
-.hasError{
+.errorMessage{
     color: red;
 }
 
 .invisible{
     display: none;
 
+}
+.hasError{
+    background-color:yellow;
 }

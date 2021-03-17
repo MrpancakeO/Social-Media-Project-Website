@@ -15,7 +15,7 @@
 <body>
     <div id="app">
         
-        <form @submit.prevent="searchGoogleBooks">
+        <form @submit.prevent="searchGoogleBooks "onsubmit="return validateForm()">
             <fieldset class="border">
                 <legend class="w-auto"> Google Books Search</legend>
                 <div class="row form-group">
@@ -30,13 +30,16 @@
                 <div class="row">
                     <div class="col-sm-4">
                         <button type="submit" class="btn btn-primary">Submit</button>
-                        <button type="reset" class="btn btn-seconday">Reset</button>
+                        <button type="reset" class="btn btn-seconday" onclick="reset()">Reset</button>
                     </div>
                 </div>
             </fieldset>
         </form>
 
         <div id="mainDiv">
+            <div id="txtErrorMessage" class=" col-sm-5 invisible hasError">
+
+            </div>
             <div class="row col-sm-5" v-if="result != null">
                 found {{ (result!=null)?result.totalItems:''}}
             </div>    
