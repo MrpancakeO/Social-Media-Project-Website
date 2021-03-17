@@ -104,40 +104,15 @@
                     Date of Birth:
                 </label>
                 <input type="date" id="lDob" name="lDob" required class="form-control" placeholder="Date of Birth">
-
-                <label for="lquestion1" class="col-form-label">
-                    <b>Security Question 1:</b>
-                    <strong><abbr title="required">*</abbr></strong>
-                </label>
-                <select id="questions" name="questions">
-                    <option value="q1">What is your mother's maiden name?</option>
-                    <option value="q2">What is your older brother's middle name?</option>
-                    <option value="q3">What is your hometown?</option>
+                <div>
+                <label for="question">Choose a security question:</label>
+                <select name="question" id="question" class="form-control" required>
+                    <option value="">----Please choose an option----</option>
+                    <option>What is your mother's maiden name?</option>
+                    <option>What is your oldest brother middle name?</option>
+                    <option>What is your hometown?</option>
                 </select>
-                <input type="text" id="txtq1 name=" txtq1" required class="form-control"
-                    placeholder="Typer answer here...">
-
-                <label for="lquestion2" class="col-form-label">
-                    <b>Security Question 2:</b>
-                    <strong><abbr title="required">*</abbr></strong>
-                </label>
-                <select id="questions" name="questions">
-                    <option value="q1">What is your mother's maiden name?</option>
-                    <option value="q2">What is your older brother's middle name?</option>
-                    <option value="q3">What is your hometown?</option>
-                </select>
-                <input type="text" id="txtq2 name=" txtq2" required class="form-control"
-                    placeholder="Typer answer here...">
-
-                <label for="lquestion3" class="col-form-label">
-                    <b>Security Question 3:</b>
-                    <strong><abbr title="required">*</abbr></strong>
-                </label>
-                <select id="questions" name="questions">
-                    <option value="q1">What is your mother's maiden name?</option>
-                    <option value="q2">What is your older brother's middle name?</option>
-                    <option value="q3">What is your hometown?</option>
-                </select>
+               <div>
                 <input type="text" id="txtq3 name=" txtq3" required class="form-control"
                     placeholder="Typer answer here...">
 
@@ -151,7 +126,7 @@
                 <button type="reset" class="btn btn-secondary">Reset</button>
             </form>
 
-
+            <script src="js/signup.js"></script>
         </article>
     </main>
 
