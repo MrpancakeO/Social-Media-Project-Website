@@ -15,6 +15,10 @@ const app = Vue.createApp({
 
 
 
+        },
+        reset() {
+            this.keyword = ''
+            this.result = null
         }
     }
 
