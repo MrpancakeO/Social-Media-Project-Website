@@ -104,9 +104,13 @@
                 <label for="lDob" class="col-form-label bold">
                     Date of Birth:
                 </label>
-                <input type="date" id="lDob" name="lDob" required class="form-control" placeholder="Date of Birth">
-                <div>
+                <input type="date" id="txtDob" name="txtDob" required class="form-control" placeholder="Date of Birth">
+                <div id="DobError" class="invisible errorMessage">
 
+                </div>
+
+
+                <div>
                     <label for="question">Choose a security question:</label>
                     <select name="question" id="selectQuestion" class="form-control" onclick="showQuestionText()"
                         required>
@@ -114,24 +118,26 @@
                         <option>What is your hometown?</option>
                         <option>What is your mother's maiden name?</option>
                         <option>What is your oldest brother middle name?</option>
-                        
+
                     </select>
                 </div>
-                <div>
-                    <input type="text" id="txtQuestion1" name="txtQuestion1" required class="form-control invisible"
-                        placeholder="Typer answer here...">
-                    <div id="textError" class="invisble"></div>
+
+                <input type="text" id="txtQuestion1" name="txtQuestion1" required class="form-control invisible"
+                    placeholder="Typer answer here...">
+                <div id="textError" class="invisble"></div>
 
 
 
-                    <label for="lbio" class=" col-form-label bold">
-                        Bio:
-                    </label>
-                    <input type="text" id="txtbio" name="txtbio" class="form-control" placeholder="I like to eat">
+                <label for="lbio" class=" col-form-label bold">
+                    Bio:
+                </label>
+                <input type="text" id="txtbio" name="txtbio" class="form-control" placeholder="I like to eat">
+
+                <div id="invalidMessage" class="hasError errorMessage invisble"></div>
 
 
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                    <button type="reset" class="btn btn-secondary">Reset</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="reset" class="btn btn-secondary">Reset</button>
             </form>
 
             <script src="js/signup.js"></script>

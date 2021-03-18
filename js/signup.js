@@ -28,14 +28,49 @@ function showQuestionText() {
 }
 
 function validateForm() {
+
+    var Dob = document.querySelector("#txtDob");
+    var divDobError = document.querySelector("#DobError");
     var formIsValid=true;
+    if (Dob.value == "") {
+        //error
+        divDobError.classList.remove("invisible");
+        divDobError.innerHTML = "The Date of Birth can not be empty.";
+        Dob.classList.add("hasError");
+        formIsValid=false;
+    }
+    else {
+        var DobDate = new Date(Dob.value);
+        var todayDate = new Date();
+        if (DobDate >= todayDate) {
+            //error
+            divDobError.classList.remove("invisible");
+            divDobError.innerHTML = "The Date of Birth must be before today's date.";
+            Dob.classList.add("hasError");
+            formIsValid=false;
+        }
+        else{
+            divDobError.classList.add("invisible");
+        divDobError.innerHTML= "";
+        Dob.classList.remove("hasError");
+        }
+    }
+
+
+   
     var elements=document.getElementsByTagName("input");
-    var invalidChars=["<",">","#","-","{","}","(",")","`","~","&quot",];
+    var invalidMessage=document.querySelector("#invalidMessage");
+    var invalidChars=["<",">","#","{","}","(",")","`","~","&quot",];
     for(let i=0;i<elements.length;i++){
         for(let j=0;j<invalidChars.length;j++){
             if(elements[i].value.indexOf(invalidChars[j]) !=-1){
                 elements[i].classList.add("hasError");
                 formIsValid=false;
+                invalidMessage.document.remove("invisible");
+            }
+            else{
+                invalidMessage.document.add("invisible");
+                
             }
         }
         
