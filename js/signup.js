@@ -28,10 +28,12 @@ function showQuestionText() {
 }
 
 function validateForm() {
+    var formIsValid=true;
+
 
     var Dob = document.querySelector("#txtDob");
     var divDobError = document.querySelector("#DobError");
-    var formIsValid=true;
+    
     if (Dob.value == "") {
         //error
         divDobError.classList.remove("invisible");
@@ -69,8 +71,8 @@ function validateForm() {
                 invalidMessage.document.remove("invisible");
             }
             else{
-                invalidMessage.document.add("invisible");
-                
+                //invalidMessage.document.add("invisible");
+
             }
         }
         
