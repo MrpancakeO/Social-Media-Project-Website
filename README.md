@@ -8,6 +8,7 @@
 - Workload/ How Things Were Divided
 - Design Choices
 - Technology Used
+- Installation  Guide
 
 # Files
 We have decided to break up the files using the best practices as taught in class, with HTML files being seperated from CSS & JS files. We have:
@@ -44,6 +45,10 @@ We wanted to create a social media site similar to the sites we grew up with lik
 - VS Code and Windows Terminal were used by both group members.
 - CSS Files in user can be found via Bootstrap as well
 
+# Installation Guide
+As long as you have the basic software listed below, you will be able to run/edit this code.
+- Js Installed
+- IDE of choice
 
 
 
