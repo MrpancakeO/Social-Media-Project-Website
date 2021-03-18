@@ -9,6 +9,7 @@
 - Design Choices
 - Technology Used
 - Installation  Guide
+- Neat Things
 
 # Files
 We have decided to break up the files using the best practices as taught in class, with HTML files being seperated from CSS & JS files. We have:
@@ -50,5 +51,7 @@ As long as you have the basic software listed below, you will be able to run/edi
 - Js Installed
 - IDE of choice
 
+# Neat Things
+- Password requirements are hidden when not entering a password, and shows when password is being entered.
 
 
