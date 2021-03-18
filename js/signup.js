@@ -30,6 +30,17 @@ function showQuestionText() {
 function validateForm() {
     var formIsValid=true;
 
+    var passcpassword=document.querySelector("#passcpassword");
+    var passcpasswordConfirm=document.querySelector("#passcpasswordConfirm");
+    var passwordMismatch = document.querySelector("#passwordMismatch");
+    if(passcpassword!=passcpasswordConfirm){
+        passwordMismatch.classList.remove("invisible");
+        formIsValid=false;
+    }
+else{
+    passwordMismatch.classList.add("invisible");
+    formIsValid=true;
+}
 
     var Dob = document.querySelector("#txtDob");
     var divDobError = document.querySelector("#DobError");

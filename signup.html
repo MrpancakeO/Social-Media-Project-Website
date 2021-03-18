@@ -101,6 +101,18 @@
                 <input type="password" id="passcpassword" name="passcpassword" required class="form-control"
                     placeholder="Password">
 
+                <label for="lpasswordConfirm" class="col-form-label bold">
+                    Confirm Password:
+                    <strong><abbr title="required">*</abbr></strong>
+                </label>
+                <input type="password" id="passcpasswordConfirm" name="passcpasswordConfirm" required
+                    class="form-control" placeholder="Password">
+                <div id="passwordMismatch" class="hasError errorMessage invisible">Please make sure passwords match</div>
+                <div id="passwordError" class="hasError errorMessage invisible">Please make sure to include stuff</div>
+
+
+
+
                 <label for="lDob" class="col-form-label bold">
                     Date of Birth:
                 </label>
@@ -133,7 +145,8 @@
                 </label>
                 <input type="text" id="txtbio" name="txtbio" class="form-control" placeholder="I like to eat">
 
-                <div id="invalidMessage" class="hasError errorMessage invisible"><b>Please make sure no speacial characters are in the highlighted fields above and try submitting again.</b></div>
+                <div id="invalidMessage" class="hasError errorMessage invisible"><b>Please make sure no speacial
+                        characters are in the highlighted fields above and try submitting again.</b></div>
 
 
                 <button type="submit" class="btn btn-primary">Submit</button>
