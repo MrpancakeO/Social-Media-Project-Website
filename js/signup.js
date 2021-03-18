@@ -1,7 +1,7 @@
 function showQuestionText() {
     var selectQuestion = document.querySelector("#selectQuestion");
     var txtQuestion1 = document.querySelector("#txtQuestion1");
-    if(selectQuestion.value !="----Please choose an option----"){
+    if(selectQuestion.value !=""){
         txtQuestion1.classList.remove("invisible");
     }
     // if(selectQuestion.value =="----Please choose an option----"){
