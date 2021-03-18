@@ -48,8 +48,33 @@
             </div>
 
         </div>
+
+        <div id="container">
+            <button id="mybtn1" type="button" class="btn btn-secondary"  v-on:click="previousSearch()">Prev</button>
+            <button id="mybtn2" type="button" class="btn btn-primary"  v-on:click="nextSearch()">Next</button>
+
+        </div>
+
+        <!--
+
+            <div class="pagination">
+                <a href="#" v-if="result != null && result.totalItems+index > 0 && index >= 20" v-on:click="previousSearch()">&laquo;</a>
+                <a href="#">1</a>
+                <a class="active" href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <a href="#">5</a>
+                <a href="#">6</a>
+                <a href="#" v-if="result != null && result.totalItems+index > 0 && result.totalItems - index > 0" v-on:click="nextSearch()">&raquo;</a>
+              </div>
+
+        -->
     </div>
 
+
+    <!-- 
+
+    -->
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
