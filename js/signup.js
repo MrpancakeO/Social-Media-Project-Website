@@ -31,6 +31,7 @@ var myInput = document.getElementById("passcpassword");
 var letter = document.getElementById("letter");
 var capital = document.getElementById("capital");
 var number = document.getElementById("number");
+var passwordError = document.querySelector("#passwordError");
 
 
 // When the user clicks on the password field, show the message box
@@ -50,9 +51,11 @@ myInput.onkeyup = function() {
   if(myInput.value.match(lowerCaseLetters)) {  
     letter.classList.remove("invalid");
     letter.classList.add("valid");
+    passwordError.classList.add("invisible")
   } else {
     letter.classList.remove("valid");
     letter.classList.add("invalid");
+    passwordError.classList.remove("invisible")
   }
   
   // Validate capital letters
@@ -60,9 +63,11 @@ myInput.onkeyup = function() {
   if(myInput.value.match(upperCaseLetters)) {  
     capital.classList.remove("invalid");
     capital.classList.add("valid");
+    passwordError.classList.add("invisible")
   } else {
     capital.classList.remove("valid");
     capital.classList.add("invalid");
+    passwordError.classList.remove("invisible")
   }
 
   // Validate numbers
@@ -70,9 +75,11 @@ myInput.onkeyup = function() {
   if(myInput.value.match(numbers)) {  
     number.classList.remove("invalid");
     number.classList.add("valid");
+    passwordError.classList.add("invisible")
   } else {
     number.classList.remove("valid");
     number.classList.add("invalid");
+    passwordError.classList.remove("invisible")
   }
   
 }
