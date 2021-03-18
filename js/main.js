@@ -21,19 +21,34 @@ const app = Vue.createApp({
         return {
             keyword: '',
             result: null,
-            index:0
+            index:0,
+            total:null
         }
     },
     methods: {
+
+        
         searchGoogleBooks() {
-            fetch('https://www.googleapis.com/books/v1/volumes?&q=' + this.keyword + "&startIndex=0&maxResults=20")
+            this.index=0;
+            fetch('https://www.googleapis.com/books/v1/volumes?&q=' + this.keyword + "&startIndex"+ this.index + "&maxResults=20")
                 .then(response => response.json())
                 .then(json => this.result = json)
+                .then(json => this.total = json)
+        },
+        nextSearch(){
 
+            this.index=this.index+20;
+            fetch('https://www.googleapis.com/books/v1/volumes?&q=' + this.keyword + "&startIndex"+ this.index + "&maxResults=20")
+                .then(response => response.json())
+                .then(json => this.result = json)
+                
+        },
+        previousSearch(){
 
-
-
-
+            this.index = this.index - 20;
+            fetch('https://www.googleapis.com/books/v1/volumes?&q=' + this.keyword + "&startIndex" + this.index + "&maxResults=20")
+                .then(response => response.json())
+                .then(json => this.result = json)
         },
         reset() {
             this.keyword = ''
