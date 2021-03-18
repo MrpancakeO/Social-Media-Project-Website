@@ -34,3 +34,17 @@ function func() {
     });
 
 }
+function showQuestionText(){
+    var selectQuestion=document.querySelector("#selectQuestion");
+    var txtQuestion1=document.querySelector("#txtQuestion1");
+    if(selectQuestion.value !="----Please choose an option----"){
+        txtQuestion1.classList.remove("invisible");
+    }
+    else{
+        txtQuestion1.classList.add("invisible");
+    }
+}
+
+function validateForm(){
+
+}
