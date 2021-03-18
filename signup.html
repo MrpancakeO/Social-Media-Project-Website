@@ -98,16 +98,26 @@
                     Password:
                     <strong><abbr title="required">*</abbr></strong>
                 </label>
-                <input type="password" id="passcpassword" name="passcpassword" required class="form-control"
-                    placeholder="Password">
+                <input type="text" id="passcpassword" name="passcpassword" required class="form-control"
+                    placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])"
+                    title="Must contain at least one number and one uppercase and lowercase letter">
 
                 <label for="lpasswordConfirm" class="col-form-label bold">
                     Confirm Password:
                     <strong><abbr title="required">*</abbr></strong>
                 </label>
-                <input type="password" id="passcpasswordConfirm" name="passcpasswordConfirm" required
-                    class="form-control" placeholder="Password">
-                <div id="passwordMismatch" class="hasError errorMessage invisible">Please make sure passwords match</div>
+                <input type="text" id="passcpasswordConfirm" name="passcpasswordConfirm" required class="form-control"
+                    placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])">
+
+                <div id="message">
+                    <h3>Password must contain the following:</h3>
+                    <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+                    <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+                    <p id="number" class="invalid">A <b>number</b></p>
+                </div>
+
+                <div id=" passwordMismatch" class="hasError errorMessage invisible">Please make sure passwords match
+                </div>
                 <div id="passwordError" class="hasError errorMessage invisible">Please make sure to include stuff</div>
 
 
