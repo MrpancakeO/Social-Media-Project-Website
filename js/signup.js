@@ -68,10 +68,10 @@ function validateForm() {
             if(elements[i].value.indexOf(invalidChars[j]) !=-1){
                 elements[i].classList.add("hasError");
                 formIsValid=false;
-                invalidMessage.document.remove("invisible");
+                invalidMessage.classList.remove("invisible");
             }
-            else{
-                //invalidMessage.document.add("invisible");
+            else if(formIsValid){
+                invalidMessage.classList.add("invisible");
 
             }
         }
