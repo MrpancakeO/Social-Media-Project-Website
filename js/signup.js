@@ -28,5 +28,17 @@ function showQuestionText() {
 }
 
 function validateForm() {
-
+    var formIsValid=true;
+    var elements=document.getElementsByTagName("input");
+    var invalidChars=["<",">","#","-","{","}","(",")","`","~","&quot",];
+    for(let i=0;i<elements.length;i++){
+        for(let j=0;j<invalidChars.length;j++){
+            if(elements[i].value.indexOf(invalidChars[j]) !=-1){
+                elements[i].classList.add("hasError");
+                formIsValid=false;
+            }
+        }
+        
+    }
+    return formIsValid;
 }
