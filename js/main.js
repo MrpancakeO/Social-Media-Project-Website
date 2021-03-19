@@ -1,14 +1,14 @@
-function validateForm(){
-    var txtSearch=document.querySelector("#txtSearch");
-    var txtErrorMessage=document.querySelector("#txtErrorMessage");
-    var formIsValid=true;
-    if(txtSearch.value==""){
+function validateForm() {
+    var txtSearch = document.querySelector("#txtSearch");
+    var txtErrorMessage = document.querySelector("#txtErrorMessage");
+    var formIsValid = true;
+    if (txtSearch.value == "") {
         txtErrorMessage.classList.remove("invisible");
         txtErrorMessage.innerHTML = "Keyword must be inputted";
         txtSearch.classList.add("hasError");
-        formIsValid=false;
+        formIsValid = false;
     }
-    else{
+    else {
         txtErrorMessage.classList.add("invisible");
         txtErrorMessage.innerHTML = "";
         txtSearch.classList.remove("hasError");
@@ -21,39 +21,52 @@ const app = Vue.createApp({
         return {
             keyword: '',
             result: null,
-            index:0,
-            total:null
+            indexCurr: 0,
+            started: false,
+            
+            noFirst: false
         }
     },
     methods: {
 
-        
+
         searchGoogleBooks() {
-            this.index=0;
-            fetch('https://www.googleapis.com/books/v1/volumes?&q=' + this.keyword + "&startIndex"+ this.index + "&maxResults=20")
+            //this.indexCurr=0;
+            this.started = true;
+            fetch('https://www.googleapis.com/books/v1/volumes?q=' + this.keyword + "&startIndex=0&maxResults=20")
                 .then(response => response.json())
                 .then(json => this.result = json)
-                .then(json => this.total = json)
         },
-        nextSearch(){
-
-            this.index=this.index+20;
-            fetch('https://www.googleapis.com/books/v1/volumes?&q=' + this.keyword + "&startIndex"+ this.index + "&maxResults=20")
+        nextSearch() {
+            this.indexCurr = this.indexCurr + 20;
+           
+            this.noFirst=true;
+            fetch('https://www.googleapis.com/books/v1/volumes?&q=' + this.keyword + "&startIndex" + this.indexCurr + "&maxResults=20")
                 .then(response => response.json())
                 .then(json => this.result = json)
-                
-        },
-        previousSearch(){
 
-            this.index = this.index - 20;
-            fetch('https://www.googleapis.com/books/v1/volumes?&q=' + this.keyword + "&startIndex" + this.index + "&maxResults=20")
+        },
+        previousSearch() {
+
+            this.indexCurr = this.indexCurr - 20;
+            if (this.indexCurr <= 0) {
+              
+                this.noFirst=false;
+            }
+
+            fetch('https://www.googleapis.com/books/v1/volumes?&q=' + this.keyword + "&startindexCurr" + this.indexCurr + "&maxResults=20")
                 .then(response => response.json())
                 .then(json => this.result = json)
         },
         reset() {
-            this.keyword = ''
-            this.result = null
+            this.keyword = '';
+            this.result = null;
+            this.indexCurr = 0;
+            this.notFirst = false;
+            this.started = false;
         }
+
+
     }
 
 

@@ -35,72 +35,72 @@ var passwordError = document.querySelector("#passwordError");
 
 
 // When the user clicks on the password field, show the message box
-myInput.onfocus = function() {
-  document.getElementById("message").style.display = "block";
+myInput.onfocus = function () {
+    document.getElementById("message").style.display = "block";
 }
 
 // When the user clicks outside of the password field, hide the message box
-myInput.onblur = function() {
-  document.getElementById("message").style.display = "none";
+myInput.onblur = function () {
+    document.getElementById("message").style.display = "none";
 }
 
 // When the user starts to type something inside the password field
-myInput.onkeyup = function() {
-  // Validate lowercase letters
-  var lowerCaseLetters = /[a-z]/g;
-  if(myInput.value.match(lowerCaseLetters)) {  
-    letter.classList.remove("invalid");
-    letter.classList.add("valid");
-    passwordError.classList.add("invisible")
-  } else {
-    letter.classList.remove("valid");
-    letter.classList.add("invalid");
-    passwordError.classList.remove("invisible")
-  }
-  
-  // Validate capital letters
-  var upperCaseLetters = /[A-Z]/g;
-  if(myInput.value.match(upperCaseLetters)) {  
-    capital.classList.remove("invalid");
-    capital.classList.add("valid");
-    passwordError.classList.add("invisible")
-  } else {
-    capital.classList.remove("valid");
-    capital.classList.add("invalid");
-    passwordError.classList.remove("invisible")
-  }
+myInput.onkeyup = function () {
+    // Validate lowercase letters
+    var lowerCaseLetters = /[a-z]/g;
+    if (myInput.value.match(lowerCaseLetters)) {
+        letter.classList.remove("invalid");
+        letter.classList.add("valid");
+        passwordError.classList.add("invisible")
+    } else {
+        letter.classList.remove("valid");
+        letter.classList.add("invalid");
+        passwordError.classList.remove("invisible")
+    }
 
-  // Validate numbers
-  var numbers = /[0-9]/g;
-  if(myInput.value.match(numbers)) {  
-    number.classList.remove("invalid");
-    number.classList.add("valid");
-    passwordError.classList.add("invisible")
-  } else {
-    number.classList.remove("valid");
-    number.classList.add("invalid");
-    passwordError.classList.remove("invisible")
-  }
-  
+    // Validate capital letters
+    var upperCaseLetters = /[A-Z]/g;
+    if (myInput.value.match(upperCaseLetters)) {
+        capital.classList.remove("invalid");
+        capital.classList.add("valid");
+        passwordError.classList.add("invisible")
+    } else {
+        capital.classList.remove("valid");
+        capital.classList.add("invalid");
+        passwordError.classList.remove("invisible")
+    }
+
+    // Validate numbers
+    var numbers = /[0-9]/g;
+    if (myInput.value.match(numbers)) {
+        number.classList.remove("invalid");
+        number.classList.add("valid");
+        passwordError.classList.add("invisible")
+    } else {
+        number.classList.remove("valid");
+        number.classList.add("invalid");
+        passwordError.classList.remove("invisible")
+    }
+
 }
 
 function validateForm() {
     var formIsValid = true;
 
-    var passcpassword = document.querySelector("#passcpassword");
-    var passcpasswordConfirm = document.querySelector("#passcpasswordConfirm");
-    var passwordMismatch = document.querySelector("#passwordMismatch");
-    if (passcpassword != passcpasswordConfirm) {
-        passwordMismatch.classList.remove("invisible");
-        formIsValid = false;
-    }
-    else {
-        passwordMismatch.classList.add("invisible");
-        formIsValid = true;
-    }
+    // var passcpassword = document.querySelector("#passcpassword");
+    // var passcpasswordConfirm = document.querySelector("#passcpasswordConfirm");
+    // var passwordMismatch = document.querySelector("#passwordMismatch");
+    // if (passcpassword.value != passcpasswordConfirm.value) {
+    //     passwordMismatch.classList.remove("invisible");
+    //     formIsValid = false;
+    // }
+    // else {
+    //     passwordMismatch.classList.add("invisible");
+    //     //formIsValid = true;
+    // }
 
 
-    
+
 
     var Dob = document.querySelector("#txtDob");
     var divDobError = document.querySelector("#DobError");
@@ -133,18 +133,18 @@ function validateForm() {
 
     var elements = document.getElementsByTagName("input");
     var invalidMessage = document.querySelector("#invalidMessage");
+    var testerror = document.querySelector("testerror");
     var invalidChars = ["<", ">", "#", "{", "}", "(", ")", "`", "~", "&quot",];
     for (let i = 0; i < elements.length; i++) {
         for (let j = 0; j < invalidChars.length; j++) {
             if (elements[i].value.indexOf(invalidChars[j]) != -1) {
+                
                 elements[i].classList.add("hasError");
-                formIsValid = false;
                 invalidMessage.classList.remove("invisible");
+                formIsValid = false;
+                
             }
-            else if (formIsValid) {
-                invalidMessage.classList.add("invisible");
-
-            }
+           
         }
 
     }

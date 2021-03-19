@@ -30,7 +30,7 @@
                 <div class="row">
                     <div class="col-sm-4">
                         <button type="submit" class="btn btn-primary">Submit</button>
-                        <button type="reset" class="btn btn-seconday" onclick="reset()">Reset</button>
+                        <button type="reset" class="btn btn-seconday" @click="reset">Reset</button>
                     </div>
                 </div>
             </fieldset>
@@ -50,8 +50,8 @@
         </div>
 
         <div id="container">
-            <button id="mybtn1" type="button" class="btn btn-secondary"  v-on:click="previousSearch()">Prev</button>
-            <button id="mybtn2" type="button" class="btn btn-primary"  v-on:click="nextSearch()">Next</button>
+            <button id="btnPrevious" type="button" class="btn btn-secondary"  v-show="notFirst" @click="previousSearch">Prev</button>
+            <button id="btnNext" type="button" class="btn btn-primary"  v-show="started" @click="nextSearch">Next</button>
 
         </div>
 
