@@ -82,22 +82,21 @@ myInput.onkeyup = function () {
         passwordError.classList.remove("invisible")
     }
 
+   
+
 }
 
 function validateForm() {
     var formIsValid = true;
 
-    // var passcpassword = document.querySelector("#passcpassword");
-    // var passcpasswordConfirm = document.querySelector("#passcpasswordConfirm");
-    // var passwordMismatch = document.querySelector("#passwordMismatch");
-    // if (passcpassword.value != passcpasswordConfirm.value) {
-    //     passwordMismatch.classList.remove("invisible");
-    //     formIsValid = false;
-    // }
-    // else {
-    //     passwordMismatch.classList.add("invisible");
-    //     //formIsValid = true;
-    // }
+    var passcpassword = document.querySelector("#passcpassword");
+    var passcpasswordConfirm = document.querySelector("#passcpasswordConfirm");
+    var passwordMismatch = document.querySelector("#passwordMismatch");
+    if (passcpassword.value != passcpasswordConfirm.value) {
+        passwordMismatch.classList.remove("invisible");
+        formIsValid = false;
+    }
+  
 
 
 
