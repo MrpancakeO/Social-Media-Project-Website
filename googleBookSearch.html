@@ -50,8 +50,8 @@
         </div>
 
         <div id="container">
-            <button id="btnPrevious" type="button" class="btn btn-secondary"  v-show="notFirst" @click="previousSearch">Prev</button>
-            <button id="btnNext" type="button" class="btn btn-primary"  v-show="started" @click="nextSearch">Next</button>
+            <button id="btnPrevious" type="button" class="btn btn-secondary"  v-show="noFirst" @click="previousSearch">Prev</button>
+            <button id="btnNext" type="button" class="btn btn-primary"  v-show="started" onclick="nextSearch()">Next</button>
 
         </div>
 
