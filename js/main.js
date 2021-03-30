@@ -1,4 +1,10 @@
-const mongoose = require("mongoose");
+const mongoose = require("mongoose"),
+usersController=require("./controllers/usersControllers"),
+layouts = require("express-ejs-layouts"),mongoose=require("mongoose");
+mongoose.connect("mongodb://localhost:27017/Social_Media_BAS",
+{useNewUrlParser:true});
+
+
 
 function validateForm() {
     var txtSearch = document.querySelector("#txtSearch");
