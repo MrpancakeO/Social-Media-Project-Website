@@ -1,3 +1,5 @@
+const mongoose = require("mongoose");
+
 function validateForm() {
     var txtSearch = document.querySelector("#txtSearch");
     var txtErrorMessage = document.querySelector("#txtErrorMessage");
