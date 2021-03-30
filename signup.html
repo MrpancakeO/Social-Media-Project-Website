@@ -37,7 +37,7 @@
 
     <main class="form-signin">
         <article class="boxOutline sizer">
-            <form onsubmit="return validateForm()">
+            <form  action="/user" method="POST" return validateForm()>
                 <h2 class="display-4">
                     <b>Sign Up Page:</b>
                 </h2>
@@ -133,7 +133,7 @@
                 <label for="lDob" class="col-form-label bold">
                     Date of Birth:
                 </label>
-                <input type="date" id="txtDob" name="Dob" required class="form-control" placeholder="Date of Birth">
+                <input type="date" id="txtDob" name="dob" required class="form-control" placeholder="Date of Birth">
                 <div id="DobError" class="invisible errorMessage">
 
                 </div>
