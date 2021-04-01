@@ -27,6 +27,7 @@ app.use(
 );
 
 app.get("/signup", usersController.getUsersPage);
+app.post("/user",usersController.saveUser);
 
 app.use(express.json());
 
