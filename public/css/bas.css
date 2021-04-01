@@ -11,7 +11,7 @@ body {
   width: 100%;
   height: 110px;
   padding: 20px 0 5px 0;
-  border-bottom: solid 8px #ee3114;
+  border-bottom: solid 8px blue;
   box-shadow: 10px 10px 10px #ccc;
   position: absolute;
   top: 0;
@@ -47,7 +47,7 @@ a {
 }
 
 .button {
-  background-color: #ed4a0f;
+  background-color: blue;
   padding: 0.3vw 3vw;
   border-radius: 2px;
   cursor: pointer;
