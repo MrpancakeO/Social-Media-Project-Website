@@ -27,14 +27,16 @@ app.use(
     })
 );
 
+
+app.use(express.json());
+
 app.get("/friends",homeController.showFriends);
 app.get("/homepage",homeController.showHomepage);
-app.get("users", usersController.getAllUsers);
+app.get("/users", usersController.getAllUsers);
 app.get("/signin",homeController.getSignin);
 app.get("/signup", usersController.getUsersPage);
 app.post("/user",usersController.saveUser);
 
-app.use(express.json());
 
 
 app.use(errorController.pageNotFoundError);
