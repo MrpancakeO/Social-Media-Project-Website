@@ -4,7 +4,7 @@ const mongoose = require("mongoose"),
   User = require("./models/user");
 
 mongoose.connect(
-  "mongodb://localhost:27017/recipe_db",
+  "mongodb://localhost:27017/Social_Media_BAS",
   { useNewUrlParser: true }
 );
 mongoose.set("useCreateIndex", true);
