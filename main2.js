@@ -26,6 +26,8 @@ app.use(
     })
 );
 
+app.get("/signup", usersController.getUsersPage);
+
 app.use(express.json());
 
 

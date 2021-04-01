@@ -19,7 +19,7 @@ exports.getAllUsers = (req, res) => {
 
 
 exports.getUsersPage = (req, res) => {
-    res.render("~placeholder");
+    res.render("signup");
 }
 
 exports.saveUser = (req, res) => {
