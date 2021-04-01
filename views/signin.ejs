@@ -1,0 +1,75 @@
+
+<head>
+    <title>
+        Welcome to B.A.S.
+    </title>
+    <style>
+    .btn1{
+        background: green;
+        color: white;
+    }
+    </style>
+</head>
+
+<body class="text-center">
+    <header>
+        <h1 class="display-1 bold boxOutline">Welcome to BAS</h1>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </header>
+
+    <link href="signin.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <main class="form-signin">
+        <h2 class="display-4 boxOutline">Please sign in below</h2>
+        <article>
+            <form>
+                <fieldset>
+                    <div class="mb-3 row">
+                        <div class="col-auto">
+                            <label for="txtUsername" class="col-form-label"></label>
+                            </label>
+                        </div>
+                        <div class="col-auto">
+                            <input type="text" id="txtUsername" name="txtUsername" required class="form-control"
+                                placeholder="Username" required>
+                        </div>
+                    </div>
+
+                    <div class="mb-3 row">
+                        <div class="col-auto">
+                            <label for="txtPassword" class="col-form-label">
+                            </label>
+                        </div>
+                        <div class="col-auto">
+                            <input type="password" id="txtPassword" name="txtPassword" required class="form-control"
+                                placeholder="Password" required>
+                        </div>
+                    </div>
+                    <div>
+                        <button type="button" class="btn btn-primary">Submit</button>
+                        <button type="button" class="btn btn-danger">Cancel</button>
+                        <input type="checkbox" id="rememberMe" name="rememberMe" value="Login">
+                        <label for="checkbox" style="background: white;"> Remember Me</label>
+                    </div>
+                </fieldset>
+            </form>
+        </article>
+    </main>
+    <footer>
+        <div class="mt-5 mb-3 text-muted">
+            <button type="button" class="btn btn-success">Make a new account!</button>
+            <button type="button" class="btn btn-link" style="background: white;">Forgot password? Click here!</button>
+            
+
+        </div>
+
+
+    </footer>
+
+
+</body>
+
+
+
