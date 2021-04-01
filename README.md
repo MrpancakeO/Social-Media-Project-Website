@@ -4,6 +4,7 @@
 
 ### Table of Contents
 - Files
+- Public
 - Description of Project
 - Workload/ How Things Were Divided
 - Design Choices
@@ -75,5 +76,6 @@ Firstly, be sure to have MonoDB and nodemon installed.
 # Neat Things
 - Password requirements are hidden when not entering a password, and shows when password is being entered.
 - One of the fake users was inspired by a midlane champ :)
+- MongoseDB logs signin from users as well
 
 
