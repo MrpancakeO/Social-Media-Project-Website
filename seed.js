@@ -11,22 +11,63 @@ mongoose.set("useCreateIndex", true);
 mongoose.connection;
 
 var contacts = [
-  {
-    name: { first: "Jon", last: "Wexler" },
-    email: "jon@jonwexler.com",
-    zipCode: 10016
-  },
-  {
-    name: { first: "Chef", last: "Eggplant" },
-    email: "eggplant@recipeapp.com",
-    zipCode: 20331
-  },
-  {
-    name: { first: "Professor", last: "Souffle" },
-    email: "souffle@recipeapp.com",
-    zipCode: 19103
-  }
-];
+    {
+      fname: "Tyler",
+      lname: "Hooptie",
+      username: "TylerFiller",
+      gender: "male",
+      location: "Colorado",
+      email: "Tyler767@hotmail.com",
+      namepassword: "HeHe123",
+      namepasswordConfirm: "HeHe123",
+      dob: new Date('2021-03-09T00:00:00.000+00:00'),
+      question1: "What is your mother's maiden name?",
+      txtAnswer: "Jane",
+      namebio: "hehexd"
+    },
+    {
+        fname: "Faker",
+        lname: "Baker",
+        username: "MidLaneChamp",
+        gender: "male",
+        location: "New York",
+        email: "FakeIt@gmail.com",
+        namepassword: "LoL212",
+        namepasswordConfirm: "LoL212",
+        dob: new Date('2021-03-09T00:00:00.000+00:00'),
+        question1: "What is your hometown?",
+        txtAnswer: "Seoul",
+        namebio: "I am the best"
+    },
+    {
+        fname: "Pablo",
+        lname: "Modelo",
+        username: "RageKing767",
+        gender: "male",
+        location: "California",
+        email: "Oops@gmail.com",
+        namepassword: "yUpUp232",
+        namepasswordConfirm: "yUpUp232",
+        dob: new Date('2021-03-09T00:00:00.000+00:00'),
+        question1: "What is your oldest brother middle name?",
+        txtAnswer: "Ryan",
+        namebio: "Let's have fun!"
+    },
+    {
+        fname: "Jade",
+        lname: "Guppy",
+        username: "Guppy7878",
+        gender: "male",
+        location: "Wyoming",
+        email: "Dragonboat2@gmail.com",
+        namepassword: "sWim222",
+        namepasswordConfirm: "sWim222",
+        dob: new Date('2021-03-09T00:00:00.000+00:00'),
+        question1: "What is your oldest brother middle name?",
+        txtAnswer: "Brandon",
+        namebio: "Mazda go zoom zoom!"
+    }
+  ];
 
 User.deleteMany()
   .exec()
@@ -39,10 +80,17 @@ var commands = [];
 contacts.forEach(c => {
   commands.push(
     User.create({
-      name: c.name,
-      email: c.email,
-      zipCode: c.zipCode,
-      password: c.zipCode
+        fname: c.fname,
+        lname: c.lname,
+        username: c.username,
+        gender: c.gender,
+        location: c.location,
+        email: c.email,
+        namepassword: c.namepassword,
+        namepasswordConfirm: c.namepasswordConfirm,
+        dob: c.dob,
+        question1: c.question1,
+        namebio: c.namebio,
     })
   );
 });
