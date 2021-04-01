@@ -26,6 +26,7 @@ app.use(
     })
 );
 
+app.get("/homepage",homeController.showHomepage);
 app.get("/signup", usersController.getUsersPage);
 app.post("/user",usersController.saveUser);
 
