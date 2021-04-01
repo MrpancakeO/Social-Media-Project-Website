@@ -28,6 +28,9 @@ exports.showFriends =(req,res) => {
     res.render("friends",{listedFriends:friends});
 }
 
+exports.getSignin =(req,res) => {
+    res.render("signin");
+}
 
 exports.showIndex = (req, res) => {
     res.render("index");

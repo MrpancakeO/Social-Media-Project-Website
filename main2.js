@@ -30,6 +30,7 @@ app.use(
 app.get("/friends",homeController.showFriends);
 app.get("/homepage",homeController.showHomepage);
 app.get("users", usersController.getAllUsers);
+app.get("/signin",homeController.getSignin);
 app.get("/signup", usersController.getUsersPage);
 app.post("/user",usersController.saveUser);
 
