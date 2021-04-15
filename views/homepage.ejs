@@ -38,6 +38,10 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </header>
   
+
+  <divclass="col boxOutline" class="row" style="text-align: center;">
+    <h5>New Post:</h5>
+  </div>
    
 
 
@@ -49,9 +53,13 @@
     </div>
     <div class="col-14">
       <div class="p-3 border bg-light">
-        <div>Friend 1:
-          Hello World</div>
         
+        <% posts.forEach(post=> { %>
+          <p>
+            <%= post.description %>
+          </p>
+
+          <% }); %>
       </div>
     </div>
     <br>
