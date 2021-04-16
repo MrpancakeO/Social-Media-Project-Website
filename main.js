@@ -45,9 +45,9 @@ app.use(
 app.use(express.json());
 
 app.get("/friends",homeController.showFriends);
-app.get("/homepage",homeController.showHomepage, postsController.index);
+app.get("/homepage",homeController.showHomepage );
 
-app.post("/post",postsController.create, postsController.redirectView);
+app.post("/post",postsController.create, postsController.redirectView, postsController.index);
 app.get("/posts",postsController.index,postsController.indexView)
 app.get("/posts/new", postsController.new);
 app.get("/posts/:id", postsController.show, postsController.showView);

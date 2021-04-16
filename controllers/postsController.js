@@ -1,6 +1,6 @@
 "use strict";
 
-
+var homePosts;
 const Post = require("../models/post");
 
 module.exports = {
@@ -8,6 +8,8 @@ module.exports = {
         Post.find()
             .then(posts => {
                 res.locals.posts = posts;
+                homePosts=posts;
+                console.log(homePosts)
                 next()
             })
             .catch(error => {
@@ -17,6 +19,9 @@ module.exports = {
     },
     indexView: (req, res) => {
         res.render("posts/index");
+    },
+    homeView:(req,res) =>{
+        res.render("/homepage");
     },
     new: (req, res) => {
         res.render("posts/new");
