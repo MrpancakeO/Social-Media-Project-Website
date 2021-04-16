@@ -66,7 +66,7 @@ module.exports = {
             .then(posts => {
                 res.locals.posts = posts;
                 homePosts=posts;
-                console.log(homePosts)
+                //console.log(homePosts)
                 next()
             })
             .catch(error => {
