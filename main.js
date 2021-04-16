@@ -2,6 +2,7 @@ const express= require("express"), app=express(),
 homeController=require("./controllers/homeController"),
 errorController = require("./controllers/errorController"),
 usersController = require("./controllers/usersController"),
+methodOverride = require("method-override"),
 layouts = require("express-ejs-layouts"),mongoose=require("mongoose");
 
 
@@ -29,6 +30,9 @@ app.use(
 
 
 app.use(express.json());
+
+app.use(methodOverride("_method", {methods: ['POST', 'GET']}));
+
 
 app.get("/friends",homeController.showFriends);
 app.get("/homepage",homeController.showHomepage);
