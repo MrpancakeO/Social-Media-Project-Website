@@ -15,12 +15,12 @@
                     <%= post.description %>
                 </td>
                 <td>
-                    <a href="<%= `post/${post._id}/edit` %>">
+                    <a href="<%= `posts/${post._id}/edit` %>">
                         Edit
                     </a>
                 </td>
                 <td>
-                    <a href="<%= `post/${post._id}/delete?_method=DELETE` %>" onclick="return confirm(`Are you sure?`)">
+                    <a href="<%= `posts/${post._id}/delete?_method=DELETE` %>" onclick="return confirm(`Are you sure?`)">
                         Delete
                     </a>
                 </td>

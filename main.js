@@ -23,48 +23,70 @@ mongoose.Promise = global.Promise;
 mongoose.connect("mongodb://localhost:27017/Social_Media_BAS",
 {useNewUrlParser:true});
 
-app.set("port", process.env.PORT ||3000);
-
-// app.get("/", (req,res) =>{
-//     res.send("Welcome!");
-// });
-
+app.set("port", process.env.PORT || 3000);
 app.set("view engine", "ejs");
-app.use(layouts);
 
-app.get("/", homeController.showIndex);
-
-app.use(express.static("public"))
-app.use(
+router.use(express.static("public"));
+router.use(layouts);
+router.use(expressValidator());
+router.use(
     express.urlencoded({
-        extended:false
+        extended: false
     })
 );
 
+router.use(methodOverride("_method", {methods: ['POST', 'GET']}));
 
-app.use(express.json());
+router.use(express.json());
 
-app.get("/friends",homeController.showFriends);
-app.get("/homepage",homeController.showHomepage );
-
-app.post("/post",postsController.create, postsController.redirectView, postsController.index);
-app.get("/posts",postsController.index,postsController.indexView)
-app.get("/posts/new", postsController.new);
-app.get("/posts/:id", postsController.show, postsController.showView);
-app.get("/posts/:id/edit", postsController.edit);
-app.put("/posts/:id/update", postsController.update, postsController.redirectView);
-app.delete("/posts/:id/delete", postsController.delete, postsController.redirectView);
-
-
-app.get("/users", usersController.getAllUsers);
-app.get("/signin",homeController.getSignin);
-app.get("/signup", usersController.getUsersPage);
-app.post("/user",usersController.saveUser);
+router.use(cookieParser("my_passcode"));
+router.use(expressSession({
+    secret: "my_passcode",
+    cookie: {
+        maxAge: 360000
+    },
+    resave: false,
+    saveUninitialized: false
+}));
 
 
+// router.use(passport.initialize());
+// router.use(passport.session());
+// passport.use(User.createStrategy());
+// passport.serializeUser(User.serializeUser());
+// passport.deserializeUser(User.deserializeUser());
+// router.use(connectFlash());
 
-app.use(errorController.pageNotFoundError);
-app.use(errorController.interalServerError);
+// router.use((req, res, next) => {
+//     res.locals.flashMessages = req.flash();
+//     res.locals.loggedIn = req.isAuthenticated();
+//     res.locals.currentUser = req.user;
+//     next();
+// })
+
+router.get("/friends",homeController.showFriends);
+router.get("/homepage",homeController.showHomepage );
+
+router.post("/post",postsController.create, postsController.redirectView, postsController.index);
+router.get("/posts",postsController.index,postsController.indexView)
+router.get("/posts/new", postsController.new);
+router.get("/posts/:id", postsController.show, postsController.showView);
+router.get("/posts/:id/edit", postsController.edit);
+router.put("/post/:id/update", postsController.update, postsController.redirectView);
+router.delete("/posts/:id/delete", postsController.delete, postsController.redirectView);
+
+
+router.get("/users", usersController.getAllUsers);
+router.get("/signin",homeController.getSignin);
+router.get("/signup", usersController.getUsersPage);
+router.post("/user",usersController.saveUser);
+
+
+
+router.use(errorController.pageNotFoundError);
+router.use(errorController.interalServerError);
+
+app.use("/", router);
 
 app.listen(app.get("port"), () =>{
     console.log(`Server is running on port: ${app.get("port")}`)
