@@ -53,7 +53,7 @@ userSchema=mongoose.Schema({
         type: String,
         required: true
     },
-    user: [{type: mongoose.Schema.Types.ObjectId, ref: Post}],
+    //user: [{type: mongoose.Schema.Types.ObjectId, ref: Post}],
 });
 
 userSchema.methods.getInfo = function(){
