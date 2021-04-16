@@ -33,6 +33,7 @@ exports.saveUser = (req, res) => {
         namepassword: req.body.namepassword,
         namepasswordConfirm: req.body.namepasswordConfirm,
         dob: req.body.dob,
+        questions: req.body.questions,
         question1: req.body.question1,
         namebio: req.body.namebio
     });

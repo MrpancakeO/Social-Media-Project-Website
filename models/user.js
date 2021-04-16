@@ -9,6 +9,7 @@ userSchema=mongoose.Schema({
     namepassword: String,
     namepasswordConfirm: String,
     dob: String,
+    questions: String,
     question1: String,
     namebio: String
 });
