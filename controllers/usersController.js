@@ -43,3 +43,6 @@ exports.saveUser = (req, res) => {
     })
     .catch(error=>{res.send(error)});
 }
+exports.login = (req, res) => {
+    res.render("users/login")
+}
