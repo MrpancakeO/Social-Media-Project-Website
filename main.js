@@ -1,9 +1,22 @@
-const express= require("express"), app=express(),
+const express= require("express"),
+app=express(),
+router = express.Router(),
 homeController=require("./controllers/homeController"),
 errorController = require("./controllers/errorController"),
 usersController = require("./controllers/usersController"),
+postsController= require("./controllers/postsController"),
+
+layouts = require("express-ejs-layouts"),
 methodOverride = require("method-override"),
-layouts = require("express-ejs-layouts"),mongoose=require("mongoose");
+mongoose=require("mongoose"),
+passport = require("passport"),
+cookieParser = require("cookie-parser"),
+expressSession = require("express-session"),
+expressValidator = require("express-validator"),
+connectFlash = require("connect-flash"),
+User = require("./models/user");
+
+mongoose.Promise = global.Promise;
 
 
 
@@ -31,11 +44,18 @@ app.use(
 
 app.use(express.json());
 
-app.use(methodOverride("_method", {methods: ['POST', 'GET']}));
-
-
 app.get("/friends",homeController.showFriends);
-app.get("/homepage",homeController.showHomepage);
+app.get("/homepage",homeController.showHomepage, postsController.index);
+
+app.post("/post",postsController.create, postsController.redirectView);
+app.get("/posts",postsController.index,postsController.indexView)
+app.get("/posts/new", postsController.new);
+app.get("/posts/:id", postsController.show, postsController.showView);
+app.get("/posts/:id/edit", postsController.edit);
+app.put("/posts/:id/update", postsController.update, postsController.redirectView);
+app.delete("/posts/:id/delete", postsController.delete, postsController.redirectView);
+
+
 app.get("/users", usersController.getAllUsers);
 app.get("/signin",homeController.getSignin);
 app.get("/signup", usersController.getUsersPage);

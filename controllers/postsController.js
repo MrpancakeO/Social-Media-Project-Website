@@ -31,7 +31,7 @@ module.exports = {
         Post.create(newPost)
             .then(post => {
                 res.locals.post = post;
-                res.locals.redirect = "/posts";
+                res.locals.redirect = "/homepage";
                 next();
             })
             .catch(error => {
