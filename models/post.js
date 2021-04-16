@@ -3,8 +3,7 @@ const mongoose = require("mongoose"),
     postSchema = new Schema(
         {
             description: {
-                type: String,
-                required: true
+                type: String
             }
         },
         {

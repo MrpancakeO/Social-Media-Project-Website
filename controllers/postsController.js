@@ -24,10 +24,9 @@ module.exports = {
     
     create: (req, res, next) => {
         let newPost = new Post({
-            title: req.body.title,
+            
             description: req.body.description,
-            maxStudents: req.body.maxStudents,
-            cost: req.body.cost
+            
         });
         Post.create(newPost)
             .then(post => {
@@ -76,11 +75,9 @@ module.exports = {
     update: (req, res, next) => {
         let postId = req.params.id;
         let updatedPost = new Post({
-            title: req.body.title,
+            
             description: req.body.description,
-            maxStudents: req.body.maxStudents,
-            cost: req.body.cost,
-            _id: postId
+            
         });
 
         Post.findByIdAndUpdate(postId, updatedPost)
