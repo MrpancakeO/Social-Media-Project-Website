@@ -1,22 +1,25 @@
 <div class="form-data">
     <form action="<%=`/users/${user._id}/update?_method=PUT`%>" method="POST">
-    
-    <label for="txtName">First Name</label>
-    <input type="text" name="first" id="txtFirstName" autofocus required value="<%= user.name.first %>">
 
-    <label for="txtName">Last Name</label>
-    <input type="text" name="last" id="txtLastName" autofocus required value="<%= user.name.last %>">
+        <label for="txtName">First Name</label>
+        <input type="text" name="first" id="txtFirstName" autofocus required value="<%= user.fname %>">
 
-    <label for="txtEmail">Email Address</label>
-    <input type="email" name="email" id="txtEmail" required value="<%= user.email %>">
+        <label for="txtName">Last Name</label>
+        <input type="text" name="last" id="txtLastName" autofocus required value="<%= user.lname %>">
 
-    <label for="txtPassword">Password</label>
-    <input type="password" name="password" id="txtPassword" required value="<%= user.password %>">
+        <label for="txtName">Username</label>
+        <input type="text" name="username" id="txtUsername" autofocus required value="<%= user.username %>">
 
-    <label for="txtZipCode">Zip Code</label>
-    <input type="text" name="zipCode" id="txtZipCode" required value="<%= user.zipCode %>">
+        <label for="txtEmail">Email Address</label>
+        <input type="email" name="email" id="txtEmail" required value="<%= user.email %>">
 
-    <button class="button" type="submit">Save</button>
-    
+        <label for="txtPassword">Password</label>
+        <input type="password" name="password" id="txtPassword" required value="<%= user.password %>">
+
+        <label for="txtZipCode">Zip Code</label>
+        <input type="text" name="zipCode" id="txtZipCode" required value="<%= user.zipCode %>">
+
+        <button class="button" type="submit">Save</button>
+
     </form>
 </div>

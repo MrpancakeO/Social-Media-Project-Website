@@ -72,6 +72,7 @@ router.get("/", homeController.index, homeController.showIndex);
 router.get("/friends",homeController.showFriends);
 router.get("/homepage",homeController.showHomepage, postsController.redirectView);
 
+//Posts
 router.post("/post",postsController.create, postsController.redirectView, postsController.index);
 router.get("/posts",postsController.index,postsController.indexView)
 router.get("/posts/new", postsController.new);
@@ -80,11 +81,23 @@ router.get("/posts/:id/edit", postsController.edit);
 router.put("/post/:id/update", postsController.update, postsController.redirectView);
 router.delete("/posts/:id/delete", postsController.delete, postsController.redirectView);
 
+//Users
+router.get("/users", usersController.index, usersController.indexView);
+router.get("/users/new", usersController.new);
+//router.post("/users/create", usersController.validate, usersController.create, usersController.redirectView);
 
-router.get("/users", usersController.getAllUsers);
+
+
+router.get("/users/:id", usersController.show, usersController.showView);
+// router.get("/users/:id/edit", usersController.edit);
+// router.put("/users/:id/update", usersController.validate ,usersController.update, usersController.redirectView);
+// router.delete("/users/:id/delete", usersController.delete, usersController.redirectView);
+
+
+//router.get("/users", usersController.index,usersController.indexView);
 router.get("/signin",homeController.getSignin);
 router.get("/signup", usersController.getUsersPage);
-router.post("/user",usersController.saveUser);
+//router.post("/user",usersController.saveUser);
 
 
 

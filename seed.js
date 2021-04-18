@@ -21,8 +21,8 @@ var contacts = [
       namepassword: "HeHe123",
       namepasswordConfirm: "HeHe123",
       dob: new Date('2021-03-09T00:00:00.000+00:00'),
-      question1: "What is your mother's maiden name?",
-      txtAnswer: "Jane",
+      questions: "What is your mother's maiden name?",
+      question1: "Jane",
       namebio: "hehexd"
     },
     {
@@ -35,8 +35,8 @@ var contacts = [
         namepassword: "LoL212",
         namepasswordConfirm: "LoL212",
         dob: new Date('2021-03-09T00:00:00.000+00:00'),
-        question1: "What is your hometown?",
-        txtAnswer: "Seoul",
+        questions: "What is your hometown?",
+        question1: "Seoul",
         namebio: "I am the best"
     },
     {
@@ -49,8 +49,8 @@ var contacts = [
         namepassword: "yUpUp232",
         namepasswordConfirm: "yUpUp232",
         dob: new Date('2021-03-09T00:00:00.000+00:00'),
-        question1: "What is your oldest brother middle name?",
-        txtAnswer: "Ryan",
+        questions: "What is your oldest brother middle name?",
+        question1: "Ryan",
         namebio: "Let's have fun!"
     },
     {
@@ -63,8 +63,8 @@ var contacts = [
         namepassword: "sWim222",
         namepasswordConfirm: "sWim222",
         dob: new Date('2021-03-09T00:00:00.000+00:00'),
-        question1: "What is your oldest brother middle name?",
-        txtAnswer: "Brandon",
+        questions: "What is your oldest brother middle name?",
+        question1: "Brandon",
         namebio: "Mazda go zoom zoom!"
     }
   ];
@@ -89,7 +89,8 @@ contacts.forEach(c => {
         namepassword: c.namepassword,
         namepasswordConfirm: c.namepasswordConfirm,
         dob: c.dob,
-        question1: c.question1,
+        questions: c.questions,
+        question1:c.question1,
         namebio: c.namebio,
     })
   );

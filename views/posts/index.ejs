@@ -12,7 +12,10 @@
             <tr>
                 
                 <td>
-                    <%= post.description %>
+                    <a href="<%= `/posts/${post._id}` %>">
+                        <%= post.description %>
+                    </a>
+                    
                 </td>
                 <td>
                     <a href="<%= `posts/${post._id}/edit` %>">

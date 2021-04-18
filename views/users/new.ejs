@@ -1,20 +1,58 @@
 <div class="form-data">
     <form action="/users/create" method="POST">
     
-    <label for="txtFirstName">First Name</label>
-    <input type="text" name="first" id="txtFirstName" autofocus required>
+        <label for="fname" class="col-form-label bold">
+            <span>First name:</span>
+            <strong><abbr title="required">*</abbr></strong>
+        </label>
+        <input type="text" id="txtfname" name="fname" required class="form-control" placeholder="First Name"
+            required>
 
-    <label for="txtLastName">Last Name</label>
-    <input type="text" name="last" id="txtLastName" autofocus required>
+        <label for="lname" class="col-form-label  bold">
+            Last name:
+            <strong><abbr title="required">*</abbr></strong>
+        </label>
+        <input type="text" id="txtlname" name="lname" required class="form-control" placeholder="Last Name"
+            required>
 
-    <label for="txtEmail">Email Address</label>
-    <input type="email" name="email" id="txtEmail" required>
+        <label for="luser" class="col-form-label bold">
+            Username:
+            <strong><abbr title="required">*</abbr></strong>
+        </label>
+        <input type="text" id="txtuser" name="username" required class="form-control" placeholder="username123"
+            required>
+        <fieldset>
 
-    <label for="txtPassword">Password</label>
-    <input type="password" name="password" id="txtPassword" required>
+            <label class="bold">Gender:</label>
+            <div class="form-check">
+                <input type="radio" id="rbmale" name="gender" value="male" class="form-check-input">
+                <label for="male" class="form-check-label">Male</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" id="rbfemale" name="gender" value="female" class="form-check-input">
+                <label for="female" class="form-check-label">Female</label><br>
+            </div>
 
-    <label for="txtZipCode">Zip Code</label>
-    <input type="text" name="zipCode" id="txtZipCode" required>
+
+            <div class="form-check">
+                <input type="radio" id="rbother" name="gender" value="other" class="form-check-input">
+                <label for="other" class="form-check-label">Other</label>
+            </div>
+
+        </fieldset>
+
+        <label for="llocation" class="col-form-label bold">
+            Location:
+        </label>
+        <input type="text" id="txtlocation" name="location" required class="form-control"
+            placeholder="Colorado, United States" required>
+
+        <label for="lEmail" class="col-form-label bold">
+            Email:
+            <strong><abbr title="required">*</abbr></strong>
+        </label>
+        <input type="text" id="txtemail" name="email" required class="form-control"
+            placeholder="name@example.com">
 
     <button class="button" type="submit">Create</button>
     
