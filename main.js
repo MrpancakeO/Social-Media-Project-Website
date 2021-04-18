@@ -70,7 +70,7 @@ router.use(expressSession({
 router.get("/", homeController.index, homeController.showIndex);
 
 router.get("/friends",homeController.showFriends);
-router.get("/homepage",homeController.showHomepage, postsController.redirectView);
+router.get("/homepage", postsController.index, homeController.showHomepage ,postsController.redirectView), homeController.getFriends;
 
 //Posts
 router.post("/post",postsController.create, postsController.redirectView, postsController.index);
