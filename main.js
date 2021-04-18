@@ -1,3 +1,5 @@
+"use strict";
+
 const express= require("express"),
 app=express(),
 router = express.Router(),
@@ -64,8 +66,11 @@ router.use(expressSession({
 //     next();
 // })
 
+
+router.get("/", homeController.index, homeController.showIndex);
+
 router.get("/friends",homeController.showFriends);
-router.get("/homepage",homeController.showHomepage );
+router.get("/homepage",homeController.showHomepage, postsController.redirectView);
 
 router.post("/post",postsController.create, postsController.redirectView, postsController.index);
 router.get("/posts",postsController.index,postsController.indexView)
