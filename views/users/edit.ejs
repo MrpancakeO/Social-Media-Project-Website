@@ -2,22 +2,44 @@
     <form action="<%=`/users/${user._id}/update?_method=PUT`%>" method="POST">
 
         <label for="txtName">First Name</label>
-        <input type="text" name="first" id="txtFirstName" autofocus required value="<%= user.fname %>">
+        <input type="text" name="first" id="txtFirstName" autofocus  value="<%= user.fname %>">
 
         <label for="txtName">Last Name</label>
-        <input type="text" name="last" id="txtLastName" autofocus required value="<%= user.lname %>">
+        <input type="text" name="last" id="txtLastName" autofocus  value="<%= user.lname %>">
 
         <label for="txtName">Username</label>
-        <input type="text" name="username" id="txtUsername" autofocus required value="<%= user.username %>">
+        <input type="text" name="username" id="txtUsername" autofocus  value="<%= user.username %>">
 
         <label for="txtEmail">Email Address</label>
-        <input type="email" name="email" id="txtEmail" required value="<%= user.email %>">
+        <input type="email" name="email" id="txtEmail"  value="<%= user.email %>">
 
         <label for="txtPassword">Password</label>
-        <input type="password" name="password" id="txtPassword" required value="<%= user.password %>">
+        <input type="password" name="namepassword" id="txtPassword"  value="<%= user.namepassword %>">
 
-        <label for="txtZipCode">Zip Code</label>
-        <input type="text" name="zipCode" id="txtZipCode" required value="<%= user.zipCode %>">
+        <label for="txtPassword">Confirm Password</label>
+        <input type="password" name="namepasswordConfirm" id="txtconfirm"  value="<%= user.namepasswordConfirm %>">
+
+        <label for="txtDob">Date of Birth</label>
+        <input type="date" name="dob" id="txtDob"  value="<%= user.dob %>">
+
+        <div>
+
+            <label for="txtQuestions"> Current Security Question</label>
+            <select name="questions" id="selectQuestion" id="txtQuestions" class="form-control" value="<%= user.questions %>">
+                <!--<option value="">----Please choose an option----</option>-->
+                <option>What is your hometown?</option>
+                <option>What is your mother's maiden name?</option>
+                <option>What is your oldest brother middle name?</option>
+    
+            </select>
+        </div>
+
+        <label for="txtQuestions1">Answer to Question</label>
+        <input type="text" name="questions1" id="txtQuestions1"  value="<%= user.question1 %>">
+
+        <label for="txtBio">Bio</label>
+        <input type="text" name="namebio" id="txtBio"  value="<%= user.namebio %>">
+        
 
         <button class="button" type="submit">Save</button>
 

@@ -84,20 +84,20 @@ router.delete("/posts/:id/delete", postsController.delete, postsController.redir
 //Users
 router.get("/users", usersController.index, usersController.indexView);
 router.get("/users/new", usersController.new);
-//router.post("/users/create", usersController.validate, usersController.create, usersController.redirectView);
+router.post("/user",  usersController.create, usersController.redirectView);
 
 
 
 router.get("/users/:id", usersController.show, usersController.showView);
-// router.get("/users/:id/edit", usersController.edit);
-// router.put("/users/:id/update", usersController.validate ,usersController.update, usersController.redirectView);
-// router.delete("/users/:id/delete", usersController.delete, usersController.redirectView);
+ router.get("/users/:id/edit", usersController.edit);
+router.put("/users/:id/update" ,usersController.update, usersController.redirectView);
+router.delete("/users/:id/delete", usersController.delete, usersController.redirectView);
 
 
 //router.get("/users", usersController.index,usersController.indexView);
 router.get("/signin",homeController.getSignin);
 router.get("/signup", usersController.getUsersPage);
-//router.post("/user",usersController.saveUser);
+router.post("/user",usersController.saveUser);
 
 
 

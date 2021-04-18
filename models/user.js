@@ -33,11 +33,11 @@ const mongoose = require("mongoose"),
         },
         namepassword: {
             type: String,
-            required
+            required: true
         },
         namepasswordConfirm: {
             type: String,
-            required
+            required: true
         },
         dob: {
             type: String,
