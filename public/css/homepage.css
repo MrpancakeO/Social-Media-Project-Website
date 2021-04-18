@@ -58,3 +58,11 @@ body {
   border: 5px solid green;
   background: white;
 }
+
+.post{
+  width: auto;
+    height: auto;
+    margin: auto;
+  border: 5px solid green;
+  
+}

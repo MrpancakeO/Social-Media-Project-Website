@@ -11,20 +11,21 @@
   h1 {
     background: gray;
   }
-.backerC{
-  background-color: transparent;
-  border-bottom: .25rem solid transparent;
-}
-.midder{
-  text-align: center;
-}
 
+  .backerC {
+    background-color: transparent;
+    border-bottom: .25rem solid transparent;
+  }
+
+  .midder {
+    text-align: center;
+  }
 </style>
 <link href="css/homepage.css" rel="stylesheet">
 
 <body>
   <header>
-    <div  class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
       <header class="mb-auto">
         <div>
           <h3 class="float-md-start mb-0">BAS Homepage</h3>
@@ -34,61 +35,84 @@
             <a class="nav-link" href="#">Messages</a>
           </nav>
         </div>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  </header>
-  
-
- 
-   
-
-
-  <div class="col boxOutline" class="row" style="text-align: center;">
-    <h5>New Post:</h5>
-    <form action="/post" method="POST">
-      <input type="text" name="description" value="" id="txtPost">
-      <br>
-      <input type="submit" class="button" value="submit">
-    </form>
-
-    <br>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      </header>
 
 
 
-    <h4 class="display-1">Recent Post</h4>
-    <div class="container overflow-hidden">
-    </div>
-    <div class="row gy-5">
-    </div>
-    <div class="col-14">
-      <div class="p-3 border bg-light">
-        <!-- Posts display here hopefully-->
 
-        <%// posts.forEach(post =>{ %>
 
-          <p>
-            <%//= post.description %>
-          </p>
-          <%// }) %>
-       
-        
-      </div>
-    </div>
-    <br>
 
-    <div class="col">
-      <h4 class="display-1">Friends</h4>
-      <div class="container overflow-hidden">
-      </div>
-      <div class="row gy-5">
-      </div>
-      <div class="col-14">
-        <div class="p-3 border bg-light">No friends :(</div>
+      <div class="col boxOutline" class="row" style="text-align: center;">
+        <h5>New Post:</h5>
+        <form action="/post" method="POST">
+          <input type="text" name="description" value="" id="txtPost">
+          <br>
+          <input type="submit" class="button" value="submit">
+        </form>
+
         <br>
+
+
+
+        <h4 class="display-1">Recent Post</h4>
+        <div class="container overflow-hidden">
+        </div>
+        <div class="row gy-5">
+        </div>
+        <div class="col-14">
+          <div class="p-3 border bg-light post">
+
+            <!-- Posts display here hopefully-->
+            <% var count=1; %>
+              <% posts.forEach(post=>{ %>
+
+
+                <b style="font-style: italic;">
+                  Post <%= count %>:
+                </b>
+                <p>
+                  <%= post.description %>
+                    <% count=count+1; %>
+                </p>
+                <br>
+
+                <% }) %>
+
+
+          </div>
+        </div>
+        <br>
+
+        <div class="col">
+          <h4 class="display-1">Friends</h4>
+          <div class="container overflow-hidden">
+          </div>
+          <div class="row gy-5">
+          </div>
+          <div class="col-14">
+            <div class="p-3 border bg-light">
+
+              <% listedFriends.forEach(friend=> { %>
+
+
+                <li>
+                  <%= friend.name %>
+                </li>
+                <br>
+
+
+
+                <% }); %>
+
+                  No more friends :(
+            </div>
+            <br>
+          </div>
+
+        </div>
       </div>
-      
-    </div>
-  </div>
 
 
 </body>
