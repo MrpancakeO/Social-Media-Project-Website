@@ -50,19 +50,23 @@ router.use(expressSession({
 }));
 
 
-// router.use(passport.initialize());
-// router.use(passport.session());
-// passport.use(User.createStrategy());
-// passport.serializeUser(User.serializeUser());
-// passport.deserializeUser(User.deserializeUser());
-// router.use(connectFlash());
+router.use(connectFlash());
 
-// router.use((req, res, next) => {
-//     res.locals.flashMessages = req.flash();
-//     res.locals.loggedIn = req.isAuthenticated();
-//     res.locals.currentUser = req.user;
-//     next();
-// })
+router.use(passport.initialize());
+router.use(passport.session());
+passport.use(User.createStrategy());
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
+
+router.use((req, res, next) => {
+     res.locals.flashMessages = req.flash();
+     res.locals.loggedIn = req.isAuthenticated();
+     res.locals.currentUser = req.user;
+     next();
+ })
+
+ router.get("/", homeController.index);
 
 router.get("/friends",homeController.showFriends);
 router.get("/homepage",homeController.showHomepage );
@@ -77,6 +81,13 @@ router.delete("/posts/:id/delete", postsController.delete, postsController.redir
 
 
 router.get("/users", usersController.getAllUsers);
+router.get("/users/new", usersController.new);
+router.post("/users/create", usersController.validate, usersController.create, usersController.redirectView);
+
+router.get("/users/login", usersController.login);
+router.post("/users/login", usersController.authenticate);
+router.get("/users/logout", usersController.logout, usersController.redirectView);
+
 router.get("/signin",homeController.getSignin);
 router.get("/signup", usersController.getUsersPage);
 router.post("/user",usersController.saveUser);
