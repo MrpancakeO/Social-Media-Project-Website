@@ -1,4 +1,4 @@
-<h2 class="center">post Table</h2>
+<h2 class="center">Posts Table</h2>
 <table class="table">
     <thead>
         <tr>
@@ -12,7 +12,10 @@
             <tr>
                 
                 <td>
-                    <%= post.description %>
+                    <a href="<%= `/posts/${post._id}` %>">
+                        <%= post.description %>
+                    </a>
+                    
                 </td>
                 <td>
                     <a href="<%= `posts/${post._id}/edit` %>">

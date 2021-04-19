@@ -77,6 +77,9 @@ module.exports = {
     showFriends: (req,res) =>{
         res.render("friends",{listedFriends:friends});
     },
+    getFriends:(req,res) =>{
+
+    },
     getSignin: (req,res) =>{
         res.render("signin");
     },
@@ -84,7 +87,7 @@ module.exports = {
         res.render("index");
     },
     showHomepage: (req,res) =>{
-        res.render("homepage");
+        res.render("homepage",{listedFriends:friends});
     },
     showSignUp: (req,res) =>{
         res.render("signup")

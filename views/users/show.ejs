@@ -1,28 +1,62 @@
-<h2 class="center">User Data for <%= user.fullName %></h2>
+<h2 class="center">User Data for <%= user.fname+ " " + user.lname %>
+</h2>
 <table class="table">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Username</th>
+            <th>Gender</th>
+            <th>Location</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Confirm Password</th>
+            <th>Date of Birth</th>
+            <th>Security Question</th>
+            <th>Answer to Question</th>
+            <th>Bio</th>
+        </tr>
+    </thead>
     <tbody>
         <tr>
-            <td>Name</td>
             <td>
-                <%= user.fullName %>
+
+                <%= user.fname %>
+
             </td>
-        </tr>
-        <tr>
-            <td>Email</td>
+            <td>
+                <%= user.lname %>
+            </td>
+            <td>
+                <%= user.username %>
+            </td>
+            <td>
+                <%= user.gender %>
+            </td>
+            <td>
+                <%= user.location %>
+            </td>
             <td>
                 <%= user.email %>
             </td>
-        </tr>
-        <tr>
-            <td>Zip Code</td>
             <td>
-                <%= user.zipCode %>
+                <%= user.namepassword %>
             </td>
-        </tr>
-        <tr>
-            <td>Number of Courses</td>
-            <td><%= user.courses.length %></td>
-        </tr>
+            <td>
+                <%= user.namepasswordConfirm %>
+            </td>
+            <td>
+                <%= user.dob %>
+            </td>
+            <td>
+                <%= user.questions %>
+            </td>
+            <td>
+                <%= user.question1 %>
+            </td>
+            <td>
+                <%= user.namebio %>
+            </td>
 
     </tbody>
 </table>

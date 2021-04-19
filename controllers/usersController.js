@@ -49,11 +49,6 @@ const passport = require("passport");
 // }
 
 module.exports = {
-    
-    login:(req, res) => {
-        res.render("users/login")
-    },
-
     getAllUsers: (req, res) => {
         User.find({})
             .exec()
@@ -95,6 +90,9 @@ module.exports = {
             .catch(error => { res.send(error) });
     },
 
+    login:(req, res) => {
+        res.render("users/login")
+    },
 
     index: (req, res, next) => {
         User.find()

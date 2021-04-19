@@ -3,6 +3,7 @@
 
 
 ### Table of Contents
+- Status
 - Files
 - Public
 - Description of Project
@@ -11,6 +12,9 @@
 - Technology Used
 - Installation  Guide
 - Neat Things
+
+# Files
+- At the moment, the code is not working and it not complete. :( We are trying to fix it at the moment.
 
 # Files
 We have decided to break up the files using the best practices as taught in class, with HTML files being seperated from CSS & JS files. We have:

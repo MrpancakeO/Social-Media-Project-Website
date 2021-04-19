@@ -82,6 +82,7 @@ module.exports = {
         let updatedPost = new Post({
             
             description: req.body.description,
+            _id:post
             
         });
 

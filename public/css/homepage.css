@@ -55,6 +55,14 @@ body {
 .boxOutline{
   
   border-radius: 10px;
-  border: 5px solid orange;
+  border: 5px solid green;
   background: white;
+}
+
+.post{
+  width: auto;
+    height: auto;
+    margin: auto;
+  border: 5px solid green;
+  
 }

@@ -1,3 +1,5 @@
+"use strict";
+
 const express= require("express"),
 app=express(),
 router = express.Router(),
@@ -68,9 +70,13 @@ router.use((req, res, next) => {
 
  router.get("/", homeController.index);
 
-router.get("/friends",homeController.showFriends);
-router.get("/homepage",homeController.showHomepage );
 
+router.get("/", homeController.index, homeController.showIndex);
+
+router.get("/friends",homeController.showFriends);
+router.get("/homepage", postsController.index, homeController.showHomepage ,postsController.redirectView), homeController.getFriends;
+
+//Posts
 router.post("/post",postsController.create, postsController.redirectView, postsController.index);
 router.get("/posts",postsController.index,postsController.indexView)
 router.get("/posts/new", postsController.new);
@@ -78,6 +84,18 @@ router.get("/posts/:id", postsController.show, postsController.showView);
 router.get("/posts/:id/edit", postsController.edit);
 router.put("/post/:id/update", postsController.update, postsController.redirectView);
 router.delete("/posts/:id/delete", postsController.delete, postsController.redirectView);
+
+//Users
+router.get("/users", usersController.index, usersController.indexView);
+router.get("/users/new", usersController.new);
+router.post("/user",  usersController.create, usersController.redirectView);
+
+
+
+router.get("/users/:id", usersController.show, usersController.showView);
+ router.get("/users/:id/edit", usersController.edit);
+router.put("/users/:id/update" ,usersController.update, usersController.redirectView);
+router.delete("/users/:id/delete", usersController.delete, usersController.redirectView);
 
 
 router.get("/users", usersController.getAllUsers);
@@ -88,6 +106,7 @@ router.get("/users/login", usersController.login);
 router.post("/users/login", usersController.authenticate);
 router.get("/users/logout", usersController.logout, usersController.redirectView);
 
+//router.get("/users", usersController.index,usersController.indexView);
 router.get("/signin",homeController.getSignin);
 router.get("/signup", usersController.getUsersPage);
 router.post("/user",usersController.saveUser);
