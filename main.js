@@ -90,6 +90,9 @@ router.get("/users", usersController.index, usersController.indexView);
 router.get("/users/new", usersController.new);
 router.post("/user",  usersController.create, usersController.redirectView);
 
+router.get("/users/login", usersController.login);
+router.post("/users/login", usersController.authenticate);
+router.get("/users/logout", usersController.logout, usersController.redirectView);
 
 
 router.get("/users/:id", usersController.show, usersController.showView);
@@ -102,9 +105,6 @@ router.get("/users", usersController.getAllUsers);
 router.get("/users/new", usersController.new);
 router.post("/users/create", usersController.validate, usersController.create, usersController.redirectView);
 
-router.get("/users/login", usersController.login);
-router.post("/users/login", usersController.authenticate);
-router.get("/users/logout", usersController.logout, usersController.redirectView);
 
 //router.get("/users", usersController.index,usersController.indexView);
 router.get("/signin",homeController.getSignin);
