@@ -52,14 +52,14 @@ router.use(expressSession({
 }));
 
 
-router.use(connectFlash());
+
 
 router.use(passport.initialize());
 router.use(passport.session());
 passport.use(User.createStrategy());
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
-
+router.use(connectFlash());
 
 router.use((req, res, next) => {
      res.locals.flashMessages = req.flash();
@@ -101,15 +101,15 @@ router.put("/users/:id/update" ,usersController.update, usersController.redirect
 router.delete("/users/:id/delete", usersController.delete, usersController.redirectView);
 
 
-router.get("/users", usersController.getAllUsers);
-router.get("/users/new", usersController.new);
-router.post("/users/create", usersController.validate, usersController.create, usersController.redirectView);
+// router.get("/users", usersController.getAllUsers);
+// router.get("/users/new", usersController.new);
+// router.post("/users/create", usersController.validate, usersController.create, usersController.redirectView);
 
 
 //router.get("/users", usersController.index,usersController.indexView);
 router.get("/signin",homeController.getSignin);
 router.get("/signup", usersController.getUsersPage);
-router.post("/user",usersController.saveUser);
+// router.post("/user",usersController.saveUser);
 
 
 
