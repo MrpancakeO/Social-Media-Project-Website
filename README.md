@@ -88,6 +88,5 @@ Firstly, be sure to have MonoDB and nodemon installed.
 - One of the fake users was inspired by a midlane champ :)
 - MongoseDB logs signin from users as well
 - Recent Post on the homepage presents post!
-- Login pages load correctly
 
 
