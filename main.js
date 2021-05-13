@@ -102,6 +102,7 @@ router.put("/users/:id/update" ,usersController.update, usersController.redirect
 router.delete("/users/:id/delete", usersController.delete, usersController.redirectView);
 
 
+
 // router.get("/users", usersController.getAllUsers);
 // router.get("/users/new", usersController.new);
 // router.post("/users/create", usersController.validate, usersController.create, usersController.redirectView);
