@@ -88,6 +88,7 @@ module.exports = {
     new: (req, res) => {
         res.render("users/new");
     },
+    
 
     // create: (req, res, next) => {
     //     if (req.skip) return next();
