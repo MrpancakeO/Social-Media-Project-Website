@@ -24,16 +24,15 @@
     <main class="form-signin">
         <h2 class="display-4 boxOutline">Please sign in below</h2>
         <article>
-            <form>
+            <form class="form-signin" action="/users/login" method="POST">
                 <fieldset>
                     <div class="mb-3 row">
                         <div class="col-auto">
-                            <label for="txtUsername" class="col-form-label"></label>
+                            <label for="txtEmail" class="col-form-label"></label>
                             </label>
                         </div>
                         <div class="col-auto">
-                            <input type="text" id="txtUsername" name="txtUsername" required class="form-control"
-                                placeholder="Username" required>
+                            <input type="email" name="email" id="txtEmail" class="form-control" placeholder="Email" required>
                         </div>
                     </div>
 
@@ -43,13 +42,13 @@
                             </label>
                         </div>
                         <div class="col-auto">
-                            <input type="password" id="txtPassword" name="txtPassword" required class="form-control"
-                                placeholder="Password" required>
+                            <input type="password" name="namepassword" id="txtPassword" class="form-control" placeholder="Password" required>
                         </div>
                     </div>
+                    
                     <div>
-                        <button type="button" class="btn btn-primary">Submit</button>
-                        <button type="button" class="btn btn-danger">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="reset" class="btn btn-danger">Cancel</button>
                         <input type="checkbox" id="rememberMe" name="rememberMe" value="Login">
                         <label for="checkbox" style="background: white;"> Remember Me</label>
                     </div>
@@ -59,7 +58,7 @@
     </main>
     <footer>
         <div class="mt-5 mb-3 text-muted">
-            <button type="button" class="btn btn-success">Make a new account!</button>
+            <a class= "btn btn-success"href="/signup">Make a new account!</a>
             <button type="button" class="btn btn-link" style="background: white;">Forgot password? Click here!</button>
             
 

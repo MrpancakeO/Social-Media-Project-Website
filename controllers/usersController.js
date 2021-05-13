@@ -163,7 +163,7 @@ module.exports = {
         });
     },
     authenticate: passport.authenticate("local", {
-        failureRedirect: "/users/login",
+        failureRedirect: "/signin",
         failureFlash: "Login failed! Check your username,password, or email",
         successRedirect: "/",
         successFlash: "Logged in!"
