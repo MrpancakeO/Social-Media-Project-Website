@@ -126,7 +126,7 @@ router.use(errorController.interalServerError);
 
 app.use("/", router);
 
-app.listen(app.get("port"), () => {
-    console.log(`Server is running on port: ${app.get("port")}`)
+const server = app.listen(app.get("port"), () => {
+    console.log(`Server is running on port at http://localhost:${app.get("port")}`)
 
 });
