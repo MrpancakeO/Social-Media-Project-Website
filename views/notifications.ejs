@@ -4,31 +4,30 @@
     </div>
     <div class="col-sm-6">
         <h1>Notifications</h1>
+        <hr>
         <br>
-        <% listedFriends.forEach(friend => { %>
-        <h5>
-            <%= friend.name %>
-        </h5>
-        
-        <p>
+        <h1>List of Friends</h1>
+        <br>
 
-            Major: <%= friend.major %>
-        </p>
-      
-        <p>
+        <% users.forEach(user => { %>
             
-            Hobby: <%= friend.hobby %>
-        </p>
-      
+        <li>
+            <a href="<%= `/users/${user._id}` %>">
+                <%= user.fname + " (" + user.username +") " + user.lname %>
+            </a>
+            <p>&nbsp<%= user.namebio %></p>
 
-        <% }); %>
+        </li>
+
+
+        <% }) %>
     </div>
 
     <h1>Posts</h1>
         <% posts.forEach(post => { %>
-        <h5>
+        <li>
             <%= post.description %>
-        </h5>
+        </li>
         <% }); %>
 
 </div>

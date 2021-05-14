@@ -5,23 +5,19 @@
     <div class="col-sm-6">
         <h1>List of Friends</h1>
         <br>
-        <% listedFriends.forEach(friend => { %>
-        <h5>
-            <%= friend.name %>
-        </h5>
-        
-        <p>
 
-            Major: <%= friend.major %>
-        </p>
-      
-        <p>
+        <% users.forEach(user => { %>
             
-            Hobby: <%= friend.hobby %>
-        </p>
-      
+        <li>
+            <a href="<%= `/users/${user._id}` %>">
+                <%= user.fname + " (" + user.username +") " + user.lname %>
+            </a>
+            <p>&nbsp<%= user.namebio %></p>
 
-        <% }); %>
+        </li>
+
+
+        <% }) %>
     </div>
 
 </div>
