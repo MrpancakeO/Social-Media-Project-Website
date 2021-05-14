@@ -22,8 +22,10 @@ mongoose.Promise = global.Promise;
 
 
 
-mongoose.connect("mongodb://localhost:27017/Social_Media_BAS",
-    { useNewUrlParser: true });
+mongoose.connect(
+    process.env.MONGODB_URI || "mongodb://localhost:27017/Social_Media_BAS",
+    { useNewUrlParser: true }
+    );
 
 app.set("port", process.env.PORT || 3000);
 app.set("view engine", "ejs");
