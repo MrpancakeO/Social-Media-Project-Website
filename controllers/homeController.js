@@ -91,5 +91,8 @@ module.exports = {
     },
     showSignUp: (req,res) =>{
         res.render("signup")
+    },
+    showNotifications: (req,res) =>{
+        res.render("notifications",{listedFriends:friends});
     }
 }

@@ -120,6 +120,37 @@
           </div>
 
         </div>
+        <div class="col">
+          <h4 class="display-1">Top Post</h4>
+          <div class="container overflow-hidden">
+          </div>
+          <div class="row gy-5">
+          </div>
+          <div class="col-14">
+            <div class="p-3 border bg-light post">
+
+              <!-- Configure for Top Post-->
+              <% var count=1; %>
+                <% posts.forEach(post=>{ %>
+  
+  
+                  <b style="font-style: italic;">
+                    Post <%= count %>:
+                  </b>
+                  <p>
+                    <%= post.description %>
+                      <% count=count+1; %>
+                  </p>
+                  <br>
+  
+                  <% }) %>
+  
+  
+            </div>
+            <br>
+          </div>
+
+        </div>
       </div>
 
 

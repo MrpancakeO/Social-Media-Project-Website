@@ -1,52 +1,24 @@
-const User = require("../models/user");
+"use strict";
+
+const User = require("../models/user"),
+    getUserParams = body => {
+        return {
+            fname: body.fname,
+            lname: body.lname,
+            username: body.username,
+            gender: body.gender,
+            location: body.location,
+            email: body.email,
+            namepassword: body.namepassword,
+            namepasswordConfirm: body.namepasswordConfirm,
+            dob: body.dob,
+            questions: body.questions,
+            question1: body.question1,
+            namebio: body.namebio
+        };
+    };
 const passport = require("passport");
 
-// exports.getAllUsers = (req, res) => {
-//     User.find({})
-//         .exec()
-//         .then(users => {
-//             res.render("users", { users: users })
-//         })
-//         .catch((error) => {
-//             console.log(error);
-//             return [];
-//         })
-//         .then(() => {
-//             console.log("promise complete")
-//         })
-
-
-// };
-
-
-// exports.getUsersPage = (req, res) => {
-//     res.render("signup");
-// }
-
-// exports.saveUser = (req, res) => {
-//     let newUser = new User({
-//         fname: req.body.fname,
-//         lname: req.body.lname,
-//         username: req.body.username,
-//         gender: req.body.gender,
-//         location: req.body.location,
-//         email: req.body.email,
-//         namepassword: req.body.namepassword,
-//         namepasswordConfirm: req.body.namepasswordConfirm,
-//         dob: req.body.dob,
-//         questions: req.body.questions,
-//         question1: req.body.question1,
-//         namebio: req.body.namebio
-//     });
-//     newUser.save()
-//         .then(() => {
-//             res.render("thanks")
-//         })
-//         .catch(error => { res.send(error) });
-// }
-// exports.login = (req, res) => {
-//     res.render("users/login")
-// }
 
 module.exports = {
     getAllUsers: (req, res) => {
@@ -62,8 +34,8 @@ module.exports = {
             .then(() => {
                 console.log("promise complete")
             })
-    
-    
+
+
     },
     getUsersPage: (req, res) => {
         res.render("signup");
@@ -90,7 +62,7 @@ module.exports = {
             .catch(error => { res.send(error) });
     },
 
-    login:(req, res) => {
+    login: (req, res) => {
         res.render("users/login")
     },
 
@@ -98,7 +70,7 @@ module.exports = {
         User.find()
             .then(users => {
                 res.locals.users = users;
-                homeUsers = users;
+                //homeUsers = users;
                 //console.log(homeUsers)
                 next()
             })
@@ -116,48 +88,72 @@ module.exports = {
     new: (req, res) => {
         res.render("users/new");
     },
+    
+
+    // create: (req, res, next) => {
+    //     if (req.skip) return next();
+    //     let newUser = new User({
+
+    //         fname: req.body.fname,
+    //         lname: req.body.lname,
+    //         username: req.body.username,
+    //         gender: req.body.gender,
+    //         location: req.body.location,
+    //         email: req.body.email,
+    //         namepassword: req.body.namepassword,
+    //         namepasswordConfirm: req.body.namepasswordConfirm,
+    //         dob: req.body.dob,
+    //         questions: req.body.questions,
+    //         question1: req.body.question1,
+    //         namebio: req.body.namebio
+
+    //     });
+    //     User.create(newUser)
+    //         .then(user => {
+    //             res.locals.user = user;
+    //             res.locals.redirect = "/homepage";
+    //             next();
+    //         })
+    //         .catch(error => {
+    //             console.log(`Error saving user: ${error.message}`);
+    //             next(error)
+    //         })
+    // },
 
     create: (req, res, next) => {
-        let newUser = new User({
+        if(req.skip) return next();
+        let userParams = getUserParams(req.body);
+        let newUser = new User(userParams);
 
-            fname: req.body.fname,
-            lname: req.body.lname,
-            username: req.body.username,
-            gender: req.body.gender,
-            location: req.body.location,
-            email: req.body.email,
-            namepassword: req.body.namepassword,
-            namepasswordConfirm: req.body.namepasswordConfirm,
-            dob: req.body.dob,
-            questions: req.body.questions,
-            question1: req.body.question1,
-            namebio: req.body.namebio
-
-        });
-        User.create(newUser)
-            .then(user => {
-                res.locals.user = user;
-                res.locals.redirect = "/homepage";
+        User.register(newUser, req.body.namepassword,(error,user) =>{
+            if(user){
+                req.flash("success", "User account successfully created");
+                res.locals.redirect = "/users";
                 next();
-            })
-            .catch(error => {
-                console.log(`Error saving user: ${error.message}`);
-                next(error)
-            })
+            }
+            else{
+                req.flash("error", `Failed to create user account: ${error.message}`);
+                res.locals.redirect = "/signup";
+                next();
+            }
+        })
+            
     },
-    validate: (req ,res ,next) => {
+
+    
+    validate: (req, res, next) => {
         req.sanitizeBody("email").normalizeEmail({
             all_lowercase: true
         }).trim();
 
         req.check("email", "error is not valid!").isEmail();
-        req.check("zipCode", "Zip Code is not valid!").notEmpty().isInt().isLength({
-            min:5,
-            max:5
-        });
+        // req.check("zipCode", "Zip Code is not valid!").notEmpty().isInt().isLength({
+        //     min: 5,
+        //     max: 5
+        // });
         req.check("password", "Password can not be empty").notEmpty();
-        req.getValidationResult().then((error)=>{
-            if(!error.isEmpty()){
+        req.getValidationResult().then((error) => {
+            if (!error.isEmpty()) {
                 let messages = error.array().map(e => e.msg);
                 req.flash("error", messages.join(" and "));
                 req.skip = true;
@@ -167,13 +163,14 @@ module.exports = {
             else next();
         });
     },
-    authenticate: passport.authenticate("local",{
-        failureRedirect: "/users/login",
+    authenticate: passport.authenticate("local", {
+        failureRedirect: "/signin",
         failureFlash: "Login failed! Check your username,password, or email",
         successRedirect: "/",
         successFlash: "Logged in!"
     }),
-    logout: (req,res, next) =>{
+
+    logout: (req, res, next) => {
         req.logout();
         req.flash("success", "You have been logged out");
         res.locals.redirect = "/";

@@ -26,6 +26,9 @@
             <a href="/friends">
                 <span class="button">Friends</span>
             </a>
+            <a href="/notifications">
+                <span class="button">Notifications</span>
+            </a>
             <!-- 
             <a href="signup.html">
                 <span class="button">Sign-up</span>
@@ -37,17 +40,19 @@
             <a href="/">
                 <span class="button">Sign In/Up</span>
             </a>
+
+            
         </div>
 
         <div class="login">
             <% if(loggedIn) { %>
             <p> Logged in as <a href="<%= `/users/${currentUser._id}`%>">
-            <%= currentUser.fname %>
+            <%= currentUser.fname +" " + currentUser.lname %>
             </a>
             <a href="/users/logout">Log out
             </a>
             <%} else { %>
-            <a href="/users/login">Log in</a>
+            <a href="/signin">Log in</a>
             <% } %>
         </div>
 
@@ -63,10 +68,14 @@
                         </div>
                     <% } %>
             <% } %>
+        
+        <!--
+
         </div>
 
             <a href="/users/login">Log in</a>
         </div>
+        -->
         
     </div>
     <%- body%>
