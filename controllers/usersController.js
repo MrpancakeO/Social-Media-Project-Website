@@ -1,6 +1,7 @@
 "use strict";
 
 const User = require("../models/user"),
+httpStatus = require("http-status-codes"),
     getUserParams = body => {
         return {
             fname: body.fname,
@@ -81,6 +82,7 @@ module.exports = {
     },
     indexView: (req, res) => {
         res.render("users/index");
+        //res.json(res.locals.users);
     },
     homeView: (req, res) => {
         res.render("/homepage");
@@ -88,7 +90,7 @@ module.exports = {
     new: (req, res) => {
         res.render("users/new");
     },
-    
+
 
     // create: (req, res, next) => {
     //     if (req.skip) return next();
@@ -121,26 +123,26 @@ module.exports = {
     // },
 
     create: (req, res, next) => {
-        if(req.skip) return next();
+        if (req.skip) return next();
         let userParams = getUserParams(req.body);
         let newUser = new User(userParams);
 
-        User.register(newUser, req.body.namepassword,(error,user) =>{
-            if(user){
+        User.register(newUser, req.body.namepassword, (error, user) => {
+            if (user) {
                 req.flash("success", "User account successfully created");
                 res.locals.redirect = "/users";
                 next();
             }
-            else{
+            else {
                 req.flash("error", `Failed to create user account: ${error.message}`);
                 res.locals.redirect = "/signup";
                 next();
             }
         })
-            
+
     },
 
-    
+
     validate: (req, res, next) => {
         req.sanitizeBody("email").normalizeEmail({
             all_lowercase: true
@@ -252,5 +254,47 @@ module.exports = {
                 console.log(`Error gathering user by ID: ${error.message}`);
                 next(error);
             })
+    },
+    respondJSON: (req, res) => {
+        res.json({
+            status: httpStatus.OK,
+            data: res.locals
+        });
+    },
+    errorJSON: (error, req, res, next) => {
+        let errorObject;
+        if (error) {
+            errorObject = {
+                status: httpStatus.INTERNAL_SERVER_ERROR,
+                message: error.message
+            };
+        } else {
+            errorObject = {
+                status: httpStatus.OK,
+                message: "Unknown Error."
+            };
+        }
+        res.json(errorObject);
+    },
+    join: (req, res, next) => {
+        let userId = req.params.id,
+            currentUser = req.user;
+        if (currentUser) {
+            User.findByIdAndUpdate(currentUser, {
+                $addToSet: {
+                    users: userId
+                }
+            })
+                .then(() => {
+                    res.locals.success = true;
+                    next();
+                })
+                .catch(error => {
+                    next(error);
+                });
+        } else {
+            next(new Error("User must log in."));
+        }
     }
-}
+};
+
