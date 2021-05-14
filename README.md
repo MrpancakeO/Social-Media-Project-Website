@@ -32,6 +32,7 @@ We have decided to break up the files using the best practices as taught in clas
 - layout.ejs (For having a base layout for the other pages)
 - index.ejs(For formatting on signup and signin pages)
 - thanks. ejs (For wehen user sucessfully signup)
+- notification.ejs (For the notification page)
 ## Post
 -Post contains .ejs files for handling the posting function
 -User contains .ejs files for handling users
@@ -52,6 +53,10 @@ Assignment 1: The goal for this project is to create a functional social media s
 Assignment 2 & 3: After the response from Assignment 1, we have decided to focus more of our efforts into getting the functionality and usability of our social media site, then clean up/modernize as we go on with the assignments. This can be seen currently with our implementation for Assignment 3, with cleaning up how the homepage interacts with the signup and signin features. We are still trying to keep the simplistic look, but being more confident with our abilities in stylizing.
 
 Assignment 4: Adding user authentication and recent post showed to be quite the challenge for us, not only in the implementation through how to actually get users to authenticate, but a time constaint as well. Thank you Dr. Jafarian for giving us the time extension to fully complete our work to our best knowledge, was really appreciated! -Aman & Brandon
+
+Final Project: As of 5/13/2021, both Brandon and I (Aman) were unable to figure out why the login function is not working. Matthew (hi!) mentioned in Assignment 4 that was graded on 5/13/2021 that he was unable to figure this out as well. We have been trying ever since the past due date to get it working.
+
+Aprt from this, we have added notifications, updated posting, attempted adding Follow/unfollow, and attempted adding Secure login.
 
 ## Workload/ How things Were Divided
 Our development happened mostly during planned meetings/sessions, with both members (Brandon & Aman) working on the documents together, and at the end of the meeting dividing off the work for the other to devlopment before the next meeting. 
@@ -78,10 +83,7 @@ As long as you have the basic software listed below, you will be able to run/edi
 - MongoDB installed
 - npm (use "npm install" into your console)
 # How to run our web site
-Firstly, be sure to have MonoDB and nodemon installed.
-- use "npm install" to install the dependecies
-- To populate the database with fake users, we have provided a "seed.js" script, please enter "node seed" into your console
-- After this, run "npm start" and eneter "localhost:3000" into your browser, and you will be good to go!
+- Since we have fully deployed this website, all that you have to do is go to the website provded.
 
 # Neat Things
 - Password requirements are hidden when not entering a password, and shows when password is being entered.
