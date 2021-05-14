@@ -84,6 +84,7 @@ As long as you have the basic software listed below, you will be able to run/edi
 - npm (use "npm install" into your console)
 # How to run our web site
 - Since we have fully deployed this website, all that you have to do is go to the website provded.
+- Website provided: https://intense-brook-08208.herokuapp.com/homepage
 
 # Neat Things
 - Password requirements are hidden when not entering a password, and shows when password is being entered.
